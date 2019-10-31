@@ -1,10 +1,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OBJETIVOS %
+% OBJECTIVES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage % empezamos en página impar
 \chapter{Objectives} 
 \label{chap:objectives} 
 
@@ -13,42 +12,56 @@ In this chapter, the considered objectives throughout this project are described
 \section{General objective}
 \label{sec:general-objective}
 
-The objective of this project is to adapt the design and development of the web tool Dr. Scratch to the new version of the programming language Scratch, to analyze the bad practice in the code detected with Dr. Scratch, to implement a new model of visualization for these bad habits and, finally, to evaluate the effectiveness and impact of this model.
+This project has four clearly differentiated general objectives. These objectives are to adapt the design and development of the web tool Dr. Scratch to the new version of the programming language Scratch, to analyze the bad smells in the code detected with Dr. Scratch, to implement a new model of visualization for these bad smells and to evaluate the effectiveness and impact of this model.
 
 
 
 \section{Specific objectives}
 \label{sec:specific-objectives}
 
-It is important to detail the starting point of the project in order to describe what specific objectives were necessary to achieve the general objective proposed. 
+It is important to detail the starting point of the project in order to describe what specific objectives were necessary to achieve each of the general objectives proposed. 
 
 At the beginning of the project, a version of Dr. Scratch already existed. That version analyzed Scratch 2.0 projects and returned different dashboards with the results. However, the work team of Scratch started to announce the launch of a new version of their language in the coming months. 
 
-From this point, the specific objectives were the following:
+From this point, the specific objectives were divided into five different phases as follows:
+
+\begin{enumerate}
+    \item Documentation and training
+    \begin{itemize}
+        \item Documentation and training about the work context: computational thinking, Scratch, Dr. Scratch, bad habits in programming and additional tools.  
+    \end{itemize}
+    \item Update of Dr. Scratch
+    \begin{itemize}
+        \item To launch the existing version of Dr. Scratch: the version of Django was obsolete. It was necessary to update Django in order to start working with Dr. Scratch. 
+        \item To update the code: to remove the modules Hairball and Kurt. For this objective, it was necessary the development of some scripts with the same functionality and the integration of them in the code of Dr. Scratch.
+        \item To add new languages: to include the Russian language as an option in the new version of Dr. Scratch.
+        \item To create a testing platform in production: to launch a first version of the Dr. Scratch update in a testing platform in Azure, during a month, and to correct possible mistakes during this period.
+        \item To coordinate both versions of Dr. Scratch: to have both versions of Dr. Scratch in the same platform of Azure, working in a compatible way in the official web of Dr. Scratch.
+        \item To stabilize and maintain the new version: to correct errors and to improve some functionalities.
+    \end{itemize}
+    \item Analysis of bad smells
+    \begin{itemize}
+         \item To collect data and to create the files for a preliminary analysis of bad smells: in order to initiate the analysis, it was necessary to analyze a set of projects with Dr. Scratch, as well as a later process of treatment and filtering of the data.
+        \item To perform an analysis of bad smells: an exhaustive analysis of the data set of analyzed projects, mainly with Pandas software. 
+        \item To present the first results in the TACKLE Congress: a presentation about the results found in the analysis of bad smells.
+        \item To improve the analysis of bad smells: to collect new data for a second analysis and to improve the previous.
+    \end{itemize}
+    \item Development of bad smells model
+    \begin{itemize}
+        \item To improve the functionality of bad smells in Dr. Scratch: To achieve the analysis of a bigger number of cases about bad smells, such as loop dead code, backdrop naming by default, etc.
+        \item To implement a new model based on bad smells: to develop a new dashboard in which bad smells are shown in a more visual and clearer way.
+    \end{itemize}
+    \item Assessment experiment
+    \begin{itemize}
+        \item To develop an assessment experiment about the bad smells model.
+        \item To analyze the results of the experiment: to compare the statistics of bad smells, before and after of the developed model, in order to check its effectiveness and impact.
+    \end{itemize}
+\end{enumerate}
 
 
-\begin{itemize}
-    \item Documentation and training about the work context: computational thinking, Scratch, Dr. Scratch, bad habits in programming and additional tools. 
-    \item To launch the existing version of Dr. Scratch: the version of Django was obsolete. It was necessary to update Django in order to start working with Dr. Scratch. 
-    \item To update the code: to remove the modules Hairball and Kurt. For this objective, it was necessary the development of some scripts with the same functionality and the integration of them in the code of Dr. Scratch.
-    \item To add new languages: to include the Russian language as an option in the new version of Dr. Scratch.
-    \item To create a testing platform in production: to launch a first version of the Dr. Scratch update in a testing platform in Azure, during a month, and to correct possible mistakes during this period.
-    \item To coordinate both versions of Dr. Scratch: to have both versions of Dr. Scratch in the same platform of Azure, working in a compatible way in the official web of Dr. Scratch.
-    \item To stabilize and maintain the new version: to correct errors and to improve some functionalities.
-    \item To collect data and to create the files for a preliminary analysis of bad smells: in order to initiate the analysis, it was necessary to analyze a set of projects with Dr. Scratch, as well as a later process of treatment and filtering of the data.
-    \item To perform an analysis of bad smells: an exhaustive analysis of the data set of analyzed projects, mainly with Pandas software. 
-    \item To present the first results in the TACKLE Congress: a presentation about the results found in the analysis of bad smells.
-    \item To improve the analysis of bad smells: to collect new data for a second analysis and to improve the previous.
-    \item To improve the functionality of bad smells in Dr. Scratch: To achieve the analysis of a bigger number of cases about bad smells, such as loop dead code, backdrop naming by default, etc.
-    \item To implement a new model based on bad smells: to develop a new dashboard in which bad smells are shown in a more visual and clearer way.
-    \item To develop an assessment experiment: to compare the statistics of bad smells, before and after of the developed model, to check its effectiveness and impact.
-    
-\end{itemize}
 
-
-
-\section{Temporary planning}
-\label{sec:temporary-planning}
+\section{Project timeline}
+\label{sec:timeline-project}
 
 This project has been carried out during two full years. In order to organize temporally the proposed objectives, we identified objectives in the short, medium and long term. In this way, the work is divided into five important phases:
 
