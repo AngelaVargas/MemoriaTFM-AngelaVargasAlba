@@ -6,8 +6,8 @@
 
 \cleardoublepage
 \chapter{Introduction}
-\label{sec:intro}
-\pagenumbering{arabic} % para empezar la numeración de página con números
+\label{chap:introduction}
+\pagenumbering{arabic} 
 
 Computational thinking (CT) is a knowledge field of great relevance and interest nowadays. During the last decade, CT has become more significant in sectors as important as education. However, to get an exact definition about CT is an actual challenge. In the year 2006, Wing defined CT as a process of formulation and resolution of problems which employs the fundamental concepts of computing~\cite{wing:_ct}. Although its skills can be developed in different ways, one of the most common tools to learn it, train it and develop it, is through programming. In this chapter, we describe the importance of an appropriate development of CT skills and how Scratch can be a fundamental tool for it. 
 
@@ -23,9 +23,9 @@ Therefore, when we talk about programming, the intention is not that children le
 
 The inclusion of programming in the educational field allows the development of computational thinking. CT is composed of different skills which are very necessary for children, such as abstraction, logic or problem decomposition. In this way, CT should be considered an ability as important as the reading, writing or mathematics in the schools ~\cite{calao:_design}.
 
-However, from software engineering, we know that problems solved through programming may have not been solved in the most appropriate way. These symptoms or bad practice are known as ``bad smells''. In other words, the program may run and may even solve the problem, but it contains elements that make it difficult to understand, to modify and to reuse~\cite{zhang:_badsmells}. Martin defines code smells as follows~\cite{martin:_clean}: ``Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future''. Despite the negative effect they produce, bad smells have been little investigated and analyzed in CT research. As Hermans and Aivaloglou have found in an experiment with Scratch learners ~\cite{felienne:_hamper}, we argue that bad smells hinder the proper development of CT skills in learners. Their identification should be a first step towards guiding learners towards good practices that offer them the possibility to develop themselves to their full potential.
+However, from software engineering, we know that problems solved through programming may have not been solved in the most appropriate way. These symptoms or bad practices are known as ``bad smells''. In other words, the program may run and may even solve the problem, but it contains elements that make it difficult to understand, to modify and to reuse~\cite{zhang:_badsmells}. Martin defines code smells as follows~\cite{martin:_clean}: ``Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future''. Despite the negative effect they produce, bad smells have been little investigated and analyzed in CT research. As Hermans and Aivaloglou have found in an experiment with Scratch learners ~\cite{felienne:_hamper}, we argue that bad smells hinder the proper development of CT skills in learners. Their identification should be a first step to guiding learners towards good practices which offer them the possibility to develop themselves to their full potential.
 
-Years ago, learning to program was a complicated task. The information to start this process was scarcer and the programming languages less intuitive. Programming based on best practice was even more complicated. Nowadays, there are numerous tools and languages to begin in the world of programming and computational thinking. In the following section, we describe Scratch, a visual language of programming designed for children and beginners, which is already used by millions of students worldwide.
+Years ago, learning to program was a complicated task. The information to start this process was scarcer and the programming languages were less intuitive. Programming based on best practices was even more complicated. Nowadays, there are numerous tools and languages to begin in the world of programming and CT. In the following section, we describe Scratch, a visual language of programming designed for children and beginners, which is already used by millions of students worldwide.
 
 
 \section{Scratch}
@@ -33,24 +33,24 @@ Years ago, learning to program was a complicated task. The information to start 
 
 Scratch~\footnote{https://scratch.mit.edu/} is a visual programming language oriented to education. It has been designed by the MIT to facilitate the learning in an intuitive way, through the use of blocks. The greatest virtue of Scratch is to allow to create stories, games or animations without previous programming knowledge.
 
-Instead of using the conventional code, the huge revolution of Scratch is the use of different pieces or blocks. The blocks are grouped by clearly identified categories, with different colors. The main functionality is based on the creation of structures with these blocks and the generation of necessary instructions so that the program works. In this way, learning to program is easier and more entertaining.
+Instead of using the conventional code, the huge revolution of Scratch was the use of different pieces or blocks. The blocks were grouped by clearly identified categories, with different colors. The main functionality was based on the creation of structures with these blocks and the generation of the instructions necessary for the program to work. In this way, learning to program became in a easier and more entertaining task.
 
-In addition, the last January of 2019 was launched Scratch 3.0, a new version which includes new categories and functionalities. With this update, Scratch has improved its variety of blocks. Its new web interface is shown in the figure ~\ref{fig:scratch}.
+After more than five years since the release of the latest version, Scratch 2.0, the community launched Scratch 3.0 in January of 2019, a new version which included many new features. With this update, Scratch has improved different functionalities and characteristics, such as the variety of blocks, the web interface design, the sound editor, the extensions, the tutorials, the software, etc.~\cite{nin:_scratch3.0}. Its new editor design is shown in the figure ~\ref{fig:scratch}.
 
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/scratch.png}
-  \caption{Web interface of Scratch 3.0.}
+  \caption{Editor design of Scratch 3.0.}
   \label{fig:scratch}
 \end{figure}
 
-On the other hand, Scratch is a world community. In this collaborative space, the ``scratchers'' can interact and share their projects, to analyze them or to remix them. In addition, they can explain their doubts in a forum or comment other projects. In this way, beginner programmers can learn in a dynamic way, with the help of other programmers. In the figure ~\ref{fig:statistics_scratch} we can observe the statistics on October 2019. Scratch is an amazing community that also continues to grow. 
+On the other hand, Scratch is in a world community. In this collaborative space, the ``scratchers'' can interact with each other or share and remix their projects. In addition, they can comment other projects or explain their doubts in a forum. In this way, beginner programmers can learn in a dynamic way, with the help of other programmers with more experience. In the figure~\ref{fig:statistics_scratch} we can observe its statistics in October 2019. Scratch has become an amazing community which also keeps growing. 
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/statistics_scratch.png}
-  \caption{Statistics of the Scratch community.}
+  \caption{Statistics of the Scratch community in October 2019.}
   \label{fig:statistics_scratch}
 \end{figure}
 
@@ -59,44 +59,52 @@ On the other hand, Scratch is a world community. In this collaborative space, th
 \section{Frame of reference}
 \label{sec:reference}
 
-With the growth of Scratch and its impact in the educational field, my tutor of this project - Dr. Gregorio Robles - together with the Dr. Jesús Moreno observed the need of a tool to evaluate the Scratch projects. In this way, Dr. Scratch~\footnote{http://www.drscratch.org/} was created in 2014.
+With the growth of the Scratch community and its impact in the educational field, my tutor of this project - Dr. Gregorio Robles - together with the Dr. Jesús Moreno observed the need of a tool to evaluate the Scratch projects. In this way, Dr. Scratch~\footnote{http://www.drscratch.org/} was created in 2014.
 
-Dr. Scratch is a web application which allows both teachers and students to automatize the analysis of Scratch projects in order to verify if the projects have been programmed correctly, to verify the bad practice in the code, to learn from their errors, to receive feedback or to improve the code. Its main interface web is shown in the figure~\ref{fig:dr_scratch}.
+Dr. Scratch is a web application which allows both teachers and students to automatize the analysis of Scratch projects in order to verify if the projects have been programmed correctly, to verify the bad practices in the code, to learn from their errors, to receive feedback or to improve the code. Its main web interface is shown in the figure~\ref{fig:dr_scratch}.
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/dr_scratch.png}
-  \caption{Interface web of Dr.Scratch.}
+  \caption{Web interface of the Dr. Scratch tool.}
   \label{fig:dr_scratch}
 \end{figure}
 
-In order to analyze a project, Dr. Scratch utilizes the files generated with Scratch. These files have a compressed format and contain a JSON file with the relevant information about the blocks utilized. In the previous version, the extension of these files was \textit{.sb2}. When we initiated this project, we knew that this format would be changed by the extension \textit{.sb3} in the new version Scratch 3.0. In addition, the content of these JSON files would change significantly. Therefore, one of the main challenges of this project was the adaptation of Dr.Scratch to the new version Scratch 3.0 which would be launched. 
+For the analysis of the projects, Dr. Scratch used \textit{Hairball}~\footnote{https://github.com/jemole/hairball}, a plugin framework which analyzed the files generated with Scratch. These files have a compressed format and contain a JSON file with the relevant information about the blocks utilized in the Scratch projects. In the previous version, Scratch 2.0, the extension of these files was \textit{.sb2}. This format was replaced by the extension \textit{.sb3} in Scratch 3.0. In this way, the content of these JSON files would change significantly and Hairball would not be compatible.
 
-For the analysis of the projects, Dr. Scratch used \textit{Hairball}~\footnote{https://github.com/jemole/hairball}, a plugin framework. The essential objective of the update was to simplify the tool, removing Hairball and integrating their functionality in the code. Therefore, the starting point was to adapt Dr.Scratch to the new version Scratch 3.0, getting the same functionalities, but with the new files \textit{.sb3} and without the Hairball module.
+Levering the need to modify the functionality of Hairball to adapt it to the new JSON format, we decided to remove it. The essential objective of this step was to simplify the software of Dr. Scratch, removing Hairball and integrating its new features in the own code of the tool. 
 
-Once the projects are analyzed, Dr. Scratch shows different dashboards with the results, which can be observed in the figure ~\ref{fig:dashboards}.
+Therefore, the starting point of this project was to adapt Dr.Scratch to the new version Scratch 3.0, which would be launched in the coming months. The challenge of this process was to get the same functionalities, but without the Hairball module.
 
-\begin{figure}[h]
+\hfill
+
+Once the projects are analyzed, Dr. Scratch shows different dashboards with the results of the analysis, which can be observed in the figure~\ref{fig:dashboards}.
+
+\begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/dashboards.png}
-  \caption{Dashboards of Dr. Scratch with the result of the analysis.}
+  \caption{Dashboard of Dr. Scratch with the results of the analysis.}
   \label{fig:dashboards}
 \end{figure}
 
-In order to measure the development grade of CT demonstrated in programming, Dr.Scratch gives a numeric punctuation based on the level reached in seven categories of CT: abstraction, logical thinking, synchronization, parallelism, flow control, user interactivity and data representation ~\cite{moreno2015dr}. Each of these capacities receives a punctuation from 0 to 3 points, depending on the Scratch blocks used. In this way, the final score varies between 0 to 21 points, with three different levels of programmers: basic, developing or proficiency.   
+In order to measure the development grade of CT demonstrated in programming, Dr. Scratch gives a numeric punctuation based on the level reached in each of the seven categories of CT: abstraction, logical thinking, synchronization, parallelism, flow control, user interactivity and data representation~\cite{moreno2015dr}. Each of these capacities receives a punctuation from 0 to 3 points, depending on the Scratch blocks used. In this way, the final score varies between 0 to 21 points, differentiating three different levels of programmers: Basic (0 to 7 points), Developing (8 to 15 points) and Proficiency (16 to 21 points).   
 
-In addition, Dr.Scratch analyzes the bad smells that may exist in the code. That is, code that has never been executed (dead code), code that is copied and pasted in the scripts of different characters (repeated code) or the lack of significant naming (default naming). In the previous version, this dashboard was shown in a small space. Another main challenge of this project was to change the importance that bad smells have in Dr. Scratch. To carry out this process, it was necessary a preliminary analysis about the behaviour of bad smells in Scratch projects.
+In addition to the CT analysis, Dr.Scratch includes other key functionality in the development of this project: the analysis of bad smells that may exist in the Scratch project. That is, code that has never been executed (dead code), code that is copied and pasted in the scripts of different characters (repeated code) or the lack of significant naming (default naming). However, this dashboard was shown in a small space to the left and in a very summary way.
 
-With this analysis, we could verify that bad smells are present in the majority of the Scratch projects and that they have a negative impact in the development of CT skills. From this point, the objective was to raise awareness of their importance. After a deeper and more exhaustive analysis of bad smells, we considered that it was necessary a new specific model for them in Dr. Scratch. The development of the bad smells mode can be observed in the figure ~\ref{fig:bad_smells}.
+Another main challenge of this project was to change the importance that bad smells had in Dr. Scratch, in order to raise awareness of their importance. To carry out this process in the most appropriate way, we developed previously an exhaustive analysis about the behaviour of bad smells in Scratch projects.
 
-\begin{figure}[h]
+With this analysis, we could verify that bad smells are present in the majority of the Scratch projects and that they had a negative impact in the development of CT skills. From this point, after a deeper and more exhaustive analysis of them, we considered that it was necessary to develop a new specific model for bad smells in Dr. Scratch. Its final design and implementation can be observed in the figure~\ref{fig:bad_smells_model}.
+
+\begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/new_model.png}
-  \caption{New model for bad smells in Dr. Scratch.}
-  \label{fig:bad_smells}
+  \caption{Interface design for the new model of bad smells in Dr. Scratch.}
+  \label{fig:bad_smells_model}
 \end{figure}
 
-The last phase of the project was to prove the effectiveness of this new model in the negative impact of bad smells. After its development, we did an experiment to verify if this new dashboard decreased the number of bad smells present in Scratch projects.
+In addition, we found an important weakness in Dr. Scratch during the analysis: It scores positively the presence of bad smells in the Scratch projects. In other words, a project with a larger number and variety of blocks -even these blocks are repeated or dead code, for example- will have more punctuation than a simpler project, even it does not have any bad smell. 
+
+From this discovery, we wanted to prove the effectiveness of our analysis with different teachers. We developed an experiment in which ten teachers from -\_ - evaluated different Scratch projects with any information about bad smells. The experiment consisted of...
 
 
 \section{Motivation}
@@ -104,7 +112,7 @@ The last phase of the project was to prove the effectiveness of this new model i
 
 Nowadays, there is a lack of resources to introduce CT, in particular programming, in the educational field. In many countries is already being implanted this area as a mandatory subject in schools. However, a lot of teachers do not have enough formation to teach in the most appropriate way this academic world. 
 
-To teach children some good methods of programming and how to avoid bad practice, is one of the most difficult tasks to begin the development of CT. Nowadays, in an era in which programming is at its peak and there is a need to introduce it since childhood, it is very important to do in a responsible and appropriate way since the beginning. 
+Teaching children some good methods of programming and how to avoid bad practices, is one of the most difficult tasks to begin the development of CT. Nowadays, in an era in which programming is at its peak and there is a need to introduce it since childhood, it is very important to do in a responsible and appropriate way since the beginning. 
 
 For this reason, the main motivation of this work has been to analyze in detail the behaviour of bad smells and its evolution. A suitable study about bad smells can help to raise awareness about its presence both in students and teachers, and fostering a more appropriate learning guide.
 
@@ -117,15 +125,16 @@ In order to facilitate the reading of the dissertation, its structure is describ
 \begin{itemize}
   \item Introduction. This chapter includes a description about the frame of reference of the project, as well as the context in which is involved. Moreover, the main motivation for its realization is explained.
   
-  \item Objectives. In the chapter \ref{chap:objectives}, the four main objectives of the project are described. The specific objectives to reach them are also detailed. In addition, a project timeline is included to clarify the planning and organization of each of them.
+  \item Objectives. In the chapter \ref{chap:objectives}, the general objective is divided into four main different parts. The specific objectives to reach it are also detailed. In addition, a project timeline is included to clarify the planning and organization of all of them.
   
-  \item State of the art. We describe the main tools and technologies used during the project in this chapter. In order to facilitate the understanding of them, we have grouped the tools into the different phases of the project.
+  \item State of the art. We describe the main tools and technologies used during the project in this chapter. In order to facilitate the understanding of them, we have grouped the tools according to the different phases of the project.
   
-  \item Design and implementation. This chapter explains in detail the development of each phase of the project and how we have implemented the different tools in the process. 
+  \item Design and implementation. This chapter includes the progress of each phase of the project and the implementation of the different tools described. The development of the bad smells analysis, as well as the previous and subsequent processes that have been needed, will be detailed in this section. 
   
-  \item Results.
+  \item Results. In this chapter, we mainly describe the results obtained from the bad smells analysis. We answer the research questions raised in the project and analyze the results found. In addition, we show the results from the assessment experiment developed.
   
   \item Conclusions.
   
 \end{itemize}
+
 
