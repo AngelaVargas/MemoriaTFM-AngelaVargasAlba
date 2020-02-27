@@ -1,54 +1,75 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONCLUSIONES %
+% CONCLUSIONS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Conclusiones}
-\label{chap:conclusiones}
+\chapter{Conclusions}
+\label{chap:conclusions}
+
+In this chapter, the achieved results -based on the proposed objectives-, as well as the encountered problems during the project, are analyzed. In addition, I reflect on the learned and applied knowledge during its development. Lastly, we contemplate possible lines of work to follow, in order to continue and improve the work. 
 
 
-\section{Consecución de objetivos}
-\label{sec:consecucion-objetivos}
+\section{Achievement of objectives}
+\label{sec:achievement_objectives}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+Regarding Chapter~\ref{chap:objectives}, the main objective of this project was composed of four different parts. In the first place, we wanted to update the Dr. Scratch tool to the new version of Scratch. This objective has been successfully achieved because we have implemented a stable version in the Google Cloud Platform, which is compatible with the new format of the Scratch projects, analyzing them and showing the same results as the previous version. However, as we described during this dissertation, we could not include the analysis of the badly initialized attributes. In its place, we developed the analysis of default backdrop naming and Dr. Scratch shows this information instead.
 
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+In the second place, we wanted to develop a complete study about bad smells, with the main objective of analyzing their impact on the CT development. Thanks to the extensive data set we collected, we developed different types of analyzes and found very interesting results. We have discovered that bad smells are present in most of the Scratch projects, and their presence is unperceived by the programmers. In addition, we extended the analysis in a statistical way, with the \textit{t-student} test, and found that the Dr. Scratch tool evaluates in a positive way the presence of bad smells, instead of penalizing them. Therefore, we have answered the proposed research questions and achieved this goal.
 
-Y si has llegado hasta aquí, siempre es bueno pasarle el corrector ortográfico, que las erratas quedan fatal en la memoria final.
-Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
+From the analysis of bad smells, we wanted to design and implement a new model in the web interface of Dr. Scratch, in which bad smells had more importance. We have also achieved this objective. We developed a model with different dashboards in which we showed the four types of bad smells -duplicated code, dead code, default sprite naming and default backdrop naming- in a more visual way. We replaced the list format of the previous version of Dr. Scratch and implemented simpler and bigger dashboards with blocks and visual format. In addition, we hid the dashboards with the CT development and we showed them only when the programmers remove all the bad smells in their projects. In this way, we raise awareness about the presence of bad smells and give them the importance they need. 
 
-\begin{verbatim}
-  aspell --lang=es_ES -c memoria.tex
-\end{verbatim}
+Lastly, the last part of the general objective was to design an experiment in order to verify the effectiveness of our research. The initial idea was to carried it out with at least 10 different teacher profiles. However, it was complicated to find them and develop it in a short period of time. Finally, we conducted the experiment with two secondary teachers. It was composed of two phases, in which they had to analyze six Scratch projects, first without any knowledge about bad smells and then, with a brief description of them. We have achieved this objective because we found that teachers are not aware about the presence of bad smells and, when they receive information about them, they evaluate the Scratch projects in a different way.
 
-\section{Aplicación de lo aprendido}
-\label{sec:aplicacion}
+Regarding the specific objectives, as we described in Chapter~\ref{chap:objectives}, they were the intermediate steps to achieve the general objective. Therefore, we can affirm that all of them have been reached. 
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+
+\section{Application of learned knowledge}
+\label{sec:applicacion_knowledge}
+
+During the development of this project, I have applied numerous skills learned during my degree and master. Due to the variety of its content and objectives, I have needed to use knowledge of very different subjects.
 
 \begin{enumerate}
-  \item a
-  \item b
+  \item \textit{Programming Fundaments}. This subject was my first contact with the programming area. Thanks to it, I learned the basic concepts of programming, such as loops, conditionals, or problem abstraction, among others. 
+  \item \textit{Programming in Telecommunication Systems}. This subject was the starting point of the programming learning process. I had to develop complicated projects that have helped me to encourage the programming problems found during this work.
+  \item \textit{Computer Network Architecture}. Thanks to this subject I acquired the knowledge related to the HTTP protocol or the structure client-server, among others. It has been very necessary to understand and modify the architecture of Dr. Scratch.  
+  \item \textit{Services and Applications in Computer Networks}. My first contact with the Python language was with this subject. In addition, I learned web programming, in particular Django. Without a doubt, this subject has been the most important for the development of the new version of Dr. Scratch.
+  \item \textit{Telematics Application Development}. This subject was an extension of the previous one. I learned more specific knowledge about web programming, such as CSS, HTML or Bootstrap, among others. For the development of the bad smells model it has been indispensable. 
+  \item \textit{Multimedia Information Processing and Management}. On this subject I learned concepts related to the data treatment, such as data filtering, sample processing or structures of databases, among others. It has been a key subject to the collection and management of the data set used in the analysis of bad smells. 
+  \item \textit{Network and Services Management and Operation}. With this subject I learned the concepts related to the cloud platforms. Although it was mainly based on Amazon Web Services, it helped me to understand the functionalities of the Azure and Google Cloud platforms. 
+  \item \textit{Projects Management}. Finally, this subject includes the general concepts for the development of the complete project. I learned different skills and tools, such as the Gantt Diagram, which have helped me to organize and manage all the work during these two years. 
 \end{enumerate}
 
 
-\section{Lecciones aprendidas}
-\label{sec:lecciones_aprendidas}
+\section{Learned lessons}
+\label{sec:learned_lessons}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+Throughout this project, I have dealt with different problems and challenges. Thanks to that, I have increased my knowledge about some of the concepts described above and have learned new ones.  
 
 \begin{enumerate}
-  \item Aquí viene uno.
-  \item Aquí viene oto.
+  \item I have learned how to work with the cloud platforms. 
+  \item I had never worked with the production environment and, throughout this project not only I had to develop a tool -the new version of Dr. Scratch-, but I also had to migrate it between platforms.
+  \item I have learnt the management of tools such as Apache and MySQL, and the configuration of their main files.
+  \item I have increased my knowledge about Django and web programming, as well as the design of web interfaces with CSS and HTML.
+  \item I have improved my knowledge about data treatment, with bigger and more complicated data set.
+  \item I have learnt other kind of data analysis, with the statistical \textit{t-student} test.
+  \item I have improved my level of English, as well as my ability to write papers and defend them in the conferences. 
 \end{enumerate}
 
 
-\section{Trabajos futuros}
-\label{sec:trabajos_futuros}
+\section{Future works}
+\label{sec:future_works}
 
-Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+Throughout this research, we have found a very important fact which I consider that is the main future work in order to continue and improve this work: the correction of the functionality of Dr. Scratch, penalizing the presence of bad smells instead of supporting them. This objective is very interesting and necessary, because it would help to raise awareness about bad smells and would support the obtained results in this project.
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+Despite this task is the most important, there are other future lines of work which could improve considerably this project.
+
+\begin{itemize}
+    \item The development of a script which analyzes the badly initialized attributes. In the new version of Dr. Scratch we could not include it in the functionality, as we described throughout the dissertation. 
+    \item The development of scripts which analyze other kind of bad smells such as the length or complexity of the code, and their integration in the code of Dr. Scratch. 
+    \item Regarding to the analysis of bad smells, although we carried out an extensive a complete analysis, we could not find the results that we expected. For this reason, another important future line of work is the development of a new statistical analysis with different data set and populations in order to find better results. 
+    \item One of the encountered problems was that we carried out the assessment experiment with only two people. Therefore, it would be necessary to repeat it with a higher variety of teacher profiles. In this way, we could verify the effectiveness of our study more reliably.
+    \item To give greater visibility to the new model of bad smells in the interface of Dr. Scratch. During this project we have designed and implemented this model, but it would be necessary to raise awareness about its importance, doing activities such as workshops or talks in schools, among others.
+    \item Lastly, as a more ambitious goal, we would like to include more languages in the Dr. Scratch tool -we included Russian. It would help to create a social community which would improve the number of users which use Dr. Scratch considerably. 
+\end{itemize}

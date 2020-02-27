@@ -14,7 +14,7 @@ In this chapter, all the phases of the project mentioned above are detailed. The
 \section{General architecture of Dr. Scratch} 
 \label{sec:arquitectura}
 
-Dr. Scratch is a client-server tool which analyzes the JSON file of a Scratch project. Its main architecture can be shown in the figure~\ref{fig:architecture}. Clients make HTTP requests to the server, which was allocated in a virtual machine of the Azure platform with Ubuntu 14.04.2 LTS as operative system. It was possible thanks to a free subscription of Microsoft. However, this subscription was over when we were developing the new version and it had to be migrated to the Google Cloud Platform, which will be detailed in the section~\ref{subsec:mig_to_google}. 
+Dr. Scratch is a client-server tool which analyzes the JSON file of a Scratch project. Its main architecture can be shown in Figure~\ref{fig:architecture}. Clients make HTTP requests to the server, which was allocated in a virtual machine of the Azure platform with Ubuntu 14.04.2 LTS as operative system. It was possible thanks to a free subscription of Microsoft. However, this subscription was over when we were developing the new version and it had to be migrated to the Google Cloud Platform, which will be detailed in Section~\ref{subsec:mig_to_google}. 
 
 The version 2.4.10 of Apache Web Server was installed inside of the virtual machine of Azure, the same as the mod\_wsgi which connects Azure with Django. In order to collect the information, Dr. Scratch used the version 5.5.43 of the MySQL database. 
 
@@ -48,7 +48,7 @@ The \textit{analyzer.py} script analyzes the blocks of the JSON file and returns
 
   \begin{table}
     \begin{center}
-    \begin{tabular}{|c|p{4cm}|p{4cm}|p{4cm}|}
+    \begin{tabular}{|c|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
     \hline
      & \multicolumn{3}{|c|}{\textbf{Competence Level}} \\ \cline{2-4}
     \textbf{CT Concept} & \textbf{Basic} & \textbf{Developing} & \textbf{Proficiency} \\ 
@@ -117,19 +117,19 @@ Lastly, in addition to the Django update and the integration of the scripts in t
 \subsection{Migration of Dr. Scratch 3.0 to Azure Platform}
 \label{subsec:mig_to_azure}
 
-Before the official launch of the new version of Dr. Scratch, we decided to test it during a period of time in another virtual machine of Azure. In the figure~\ref{fig:migrations} we can observe the process from the development of the new version until its current deployment.
+Before the official launch of the new version of Dr. Scratch, we decided to test it during a period of time in another virtual machine of Azure. In Figure~\ref{fig:migrations} we can observe the process from the development of the new version until its current deployment.
 
 \begin{figure}
     \centering
-    \includegraphics[width=11cm,                         keepaspectratio]{img/migrations.png}
+    \includegraphics[width=14cm, keepaspectratio]{img/migrations.png}
     \caption{Migration process for the new version of Dr. Scratch.}
     \label{fig:migrations}
 \end{figure}
 
 
-Thanks to an educational subscription, we had a free trial period of the services offered by Azure during a month. In this way, we configured a virtual machine with the new version of Dr. Scratch and we tested it during a month, as we can observe in the figure~\ref{fig:migrations} b). To carry out this process, it was necessary to configure Apache throughout the file \textit{httpd.conf}. This file contained the instructions for the main settings. In addition, we needed a testing database with MySQL.
+Thanks to an educational subscription, we had a free trial period of the services offered by Azure during a month. In this way, we configured a virtual machine with the new version of Dr. Scratch and we tested it during a month, as we can observe in Figure~\ref{fig:migrations} b). To carry out this process, it was necessary to configure Apache throughout the file \textit{httpd.conf}. This file contained the instructions for the main settings. In addition, we needed a testing database with MySQL.
 
-After correcting some small errors during the trial period, such as the download of certificates or the change of language,  we configured the official virtual machine of Azure with both versions of Dr. Scratch, as we observe in the figure~\ref{fig:migrations} c). Again, it was possible thanks to the configuration of the \textit{httpd.conf} file of Apache. 
+After correcting some small errors during the trial period, such as the download of certificates or the change of language,  we configured the official virtual machine of Azure with both versions of Dr. Scratch, as we observe in Figure~\ref{fig:migrations} c). Again, it was possible thanks to the configuration of the \textit{httpd.conf} file of Apache. 
 
 Finally, in January 2019 we launched the new version. Dr. Scratch 3.0 was allocated in the \textit{www.drscratch.org} domain. Its main page contained a link which redirected to the old version, allocated in the \textit{www.drscratch.org/v2} domain. We can observe the main interface of the tool in the figure ~\ref{fig:dr_scratch}.
 
@@ -217,8 +217,8 @@ The statistics and distribution of valid projects and snapshots for the analysis
   \begin{tabular}{|c|c|c|c|c|}
     \hline
      & \textbf{Total samples} & \textbf{Valid samples} & \textbf{Wrong samples} & \textbf{Survival ratio} \\ \hline
-    \textbf{Projects} & 771 & 754 & 17 & 97,80\% \\ \hline
-    \textbf{Snapshots}& 62,074 & 59,916 & 2158 & 96,52\% \\ \hline
+    \textbf{Projects} & 771 & 754 & 17 & 97.80\% \\ \hline
+    \textbf{Snapshots}& 62,074 & 59,916 & 2,158 & 96.52\% \\ \hline
   \end{tabular}
   \caption{Distribution of the final data set a used in the general analysis.}
   \label{table:datacollection_a}
@@ -238,7 +238,7 @@ During the analysis process, we found wrong projects again. We found null data i
   \begin{tabular}{|c|c|c|c|c|}
     \hline
      & \textbf{Total samples} & \textbf{Valid samples} & \textbf{Wrong samples} & \textbf{Survival ratio} \\ \hline
-    \textbf{Projects} & 250,163 & 231,024 & 19,139 & 92,35\% \\ \hline
+    \textbf{Projects} & 250,163 & 231,024 & 19,139 & 92.35\% \\ \hline
   \end{tabular}
   \caption{Distribution of the final data set b used in the general analysis.}
   \label{table:datacollection_b}
@@ -251,7 +251,7 @@ During the analysis process, we found wrong projects again. We found null data i
 
 The main objective of this phase was to analyze the presence of several bad smells in Scratch projects and how they relate to the development of CT skills. We carried out a preliminary analysis with the data set a in order to analyze to what extent bad smells are present in Scratch projects and what is its impact. Then, we repeated the same analysis with data set b in order to verify the results with a bigger set of projects. We developed both analysis with jupyter notebook, based on the CSV files generated in the previous section. 
 
-The starting point of the general analysis was to raise the main research questions that we wanted to analyze. All the proposal, as well as the development of the analysis and the results obtained, were published in the paper ``Bad Smells in Scratch Projects: A Preliminary Analysis''~\cite{vargas2019bad}. We developed this paper for the EC-TEL congress~\footnote{http://www.ec-tel.eu/} and we presented it in the TACKLE workshop~\footnote{https://sites.google.com/site/2019tackleworkshop/home} (the 2nd Systems of Assessments for Computational Thinking Learning) in Delft, Netherlands.
+The starting point of the general analysis was to raise the main research questions that we wanted to analyze. All the proposal, as well as the development of the analysis and the results obtained, were published in the paper ``Bad Smells in Scratch Projects: A Preliminary Analysis''~\cite{vargas2019bad}. We developed this paper for the EC-TEL congress\footnote{http://www.ec-tel.eu/} and we presented it in the TACKLE workshop\footnote{https://sites.google.com/site/2019tackleworkshop/home} (the 2nd Systems of Assessments for Computational Thinking Learning) in Delft, Netherlands.
 
 \subsubsection{RQ1. To what extent are bad habits present in Scratch projects?}
 \label{subsubsec:RQ1}
@@ -304,7 +304,7 @@ From this point, there were two hypotheses, \textit{H0} -both populations presen
 
 Therefore, this second study was based on data set a, since it was necessary a timeline evolution of the projects. To perform an effective analysis, we divided the total number of snapshots into deciles, that is, into 10 proportional periods of time (D0-D9), for each project. Afterwards, only those projects with at least 10 snapshots -at least one snapshot per decile- were considered as valid samples. In addition, we also removed those projects which had 0 points in the assessment with Dr. Scratch in D9. These projects did not have any development, so they were not useful for the study. 
 
-The final data set after removing invalid and null samples was composed of 543 projects and 59,332 snapshots. The survival ratio about valid projects decreases considerably due to a high density of projects with less than 10 registered snapshots. We can observe this effect in the figure~\ref{fig:distribution_snapshots_deciles}. Its distribution is also shown in Table~\ref{table:statistical_analysis_distribution_samples}. 
+The final data set after removing invalid and null samples was composed of 543 projects and 59,332 snapshots. The survival ratio about valid projects decreases considerably due to a high density of projects with less than 10 registered snapshots. We can observe this effect in Figure~\ref{fig:distribution_snapshots_deciles}. Its distribution is also shown in Table~\ref{table:statistical_analysis_distribution_samples}. 
 
 The distribution of the snapshots, for both participating projects and valid projects, is described, in a more detailed way, in Table~\ref{table:statistical_analysis_distribution_snapshots}.
 
@@ -358,7 +358,7 @@ Finally, in order to avoid redundant information, we only stored the last regist
 
 After dividing the valid data set into deciles, we analyzed its distribution according to the CT development obtained in the assessment with the Dr. Scratch tool. In Table~\ref{table:ct_development_deciles} is summarized this information for D0 and D9, in order to show the evolution between the initial and final state of the projects.
 
-We can observe how the density of the projects with a higher CT development is bigger in D9 than in D0. On the contrary, the density of projects with a lower CT development is bigger in D0 than in D9. This distribution implies a CT development throughout the timeline of the projects. We can observe this effect in a more visual way in the figure~\ref{fig:ct_development}. 
+We can observe how the density of the projects with a higher CT development is bigger in D9 than in D0. On the contrary, the density of projects with a lower CT development is bigger in D0 than in D9. This distribution implies a CT development throughout the timeline of the projects. We can observe this effect in a more visual way in Figure~\ref{fig:ct_development}. 
 
 \begin{table}
     \centering
@@ -401,7 +401,7 @@ We can observe how the density of the projects with a higher CT development is b
     \label{fig:ct_development}
 \end{figure}
 
-On the other hand, we also analyzed the distribution of the number of bad smells in each decile. In the figure~\ref{fig:bad_smells_deciles} is shown the mean value of each bad smell for each decile. As we can observe, the number of bad smells increases with the timeline evolution. This result could be produced by the increase of the CT development of the projects and, consequently, with the increase of its number of blocks.
+On the other hand, we also analyzed the distribution of the number of bad smells in each decile. In Figure~\ref{fig:bad_smells_deciles} is shown the mean value of each bad smell for each decile. As we can observe, the number of bad smells increases with the timeline evolution. This result could be produced by the increase of the CT development of the projects and, consequently, with the increase of its number of blocks.
 
 \begin{figure}
     \centering
@@ -410,7 +410,7 @@ On the other hand, we also analyzed the distribution of the number of bad smells
     \label{fig:bad_smells_deciles}
 \end{figure}
 
-In order to verify this effect, we analyzed the ratio between the mean value of each bad smell and the total number of blocks in the projects, for each decile. In this way, we obtained the contrary effect, as we can observe in the figure~\ref{fig:ratio_bad_smells_deciles}. In this figure, the ratio decreases with each decile. In other words, the mean value of bad smells is lower when the CT development increases, as we expected. 
+In order to verify this effect, we analyzed the ratio between the mean value of each bad smell and the total number of blocks in the projects, for each decile. In this way, we obtained the contrary effect, as we can observe in Figure~\ref{fig:ratio_bad_smells_deciles}. In this figure, the ratio decreases with each decile. In other words, the mean value of bad smells is lower when the CT development increases, as we expected. 
 
 \begin{figure}
     \centering
@@ -419,14 +419,14 @@ In order to verify this effect, we analyzed the ratio between the mean value of 
     \label{fig:ratio_bad_smells_deciles}
 \end{figure}
 
-\subsubsection{Test \textit{t-student}}
+\subsubsection{\textit{t-student} test}
 \label{subsubsec:test_tstudent}
 
 After analyzing the distribution and the characteristics of the data set, we found that the main development was more prominent from the decile D2. Therefore, the most effective populations for the study were in D2 and D9, as the final state. 
 
-From this point, we investigated the most appropriate procedure to develop the statistical analysis. It was the test \textit{t-student}, which compares the measures obtained -the mean value of bad smells- in two different groups for a given variable, the CT development.
+From this point, we investigated the most appropriate procedure to develop the statistical analysis. It was the \textit{t-student} test, which compares the measures obtained -the mean value of bad smells- in two different groups for a given variable, the CT development.
 
-This test allows us to know the probability to obtain results just by chance. If the probability is high, we can say that the results are due at random. On the contrary, if the probability is low, we can say that the differences obtained in the test are probably real. In other words, with a low probability we could reject \textit{H0} -both populations do not present differences in the mean value of bad smells. 
+This test allows us to know the probability to obtain results just by chance. If the probability is high, we can say that the results are due to randomness. On the contrary, if the probability is low, we can say that the differences obtained in the test are probably real. In other words, with a low probability we could reject \textit{H0} -both populations do not present differences in the mean value of bad smells. 
 
 The variable which we used in the analysis to measure this probability was the \textit{p-value}. By agreement, it is established that a \textit{p-value} less than 0.05 indicates that the result of the analysis is not random and \textit{H0} can be reasonably rejected. Therefore, if the \textit{p-value} is greater than 5\%, we cannot affirm that the differences in the results are reliable.  
 
@@ -435,7 +435,7 @@ In addition, we calculated the \textit{size effect}. This variable measures the 
 \subsubsection{Development of the statistical analysis}
 \label{subsubsec:development_statistical_analysis}
 
-After the treatment and analysis of the data set and the choice of the test \textit{t-student}, we developed the study with jupyter notebook. In particular, we implemented the function \textit{ttest\_ind}, which calculates the test \textit{t-student} for the value of two independent groups. We assumed that the populations had no identical variances.
+After the treatment and analysis of the data set and the choice of the \textit{t-student} test, we developed the study with jupyter notebook. In particular, we implemented the function \textit{ttest\_ind}, which calculates the \textit{t-student} test for the value of two independent groups. We assumed that the populations had no identical variances.
 
 
 {\footnotesize
@@ -444,12 +444,12 @@ After the treatment and analysis of the data set and the choice of the test \tex
 \end{verbatim}
 }
 
-With this function we obtained the \textit{p-value}. For the computation of the \textit{size effect}, we used an automatic online calculator~\footnote{https://www.psychometrica.de/effect\_size.html}.
+With this function we obtained the \textit{p-value}. For the computation of the \textit{size effect}, we used an automatic online calculator\footnote{https://www.psychometrica.de/effect\_size.html}.
 
-From this point, we carried out the test \textit{t-student} for different populations in order to find reliable results. We describe each case of study as a research question.
+From this point, we carried out the \textit{t-student} test for different populations in order to find reliable results. We describe each case of study as a research question.
 
 
-\subsubsection{RQ1. Test \textit{t-student} with deciles}
+\subsubsection{RQ1. \textit{t-student} test with deciles}
 \label{subsubsec:rq1_t_student_deciles}
 
 In the first place, we carried out an analysis with two general groups. The first of them was composed of a set of projects in D9 which had a few bad smells in D2. The other was a set of projects in D9 which had many bad smells in D2. With this research question we wanted to verify if the population A could present a minor mean value of bad smells in D9 than population B and, in that case, if the differences would be reliable - in terms of \textit{p-value} and \textit{size effect}. In this way, the populations were the following:
@@ -460,10 +460,10 @@ In the first place, we carried out an analysis with two general groups. The firs
 \end{itemize}
 
 
-\subsubsection{RQ2. Test \textit{t-student} with deciles for a given CT development}
+\subsubsection{RQ2. \textit{t-student} test with deciles for a given CT development}
 \label{subsubsec:rq2_t_student_deciles_ct}
 
-One of the objectives of this analysis was to measure the impact of bad smells in the CT development. In RQ1, we found significant differences in the level of CT between the two groups of study, as we will describe in chapter~\ref{chap:results}. For this reason, we repeated the test \textit{t-student}, but based on a specific set of projects of the data set. 
+One of the objectives of this analysis was to measure the impact of bad smells in the CT development. In RQ1, we found significant differences in the level of CT between the two groups of study, as we will describe in chapter~\ref{chap:results}. For this reason, we repeated the \textit{t-student} test, but based on a specific set of projects of the data set. 
 
 We selected those projects whose CT development obtained with Dr. Scratch in D2 was included in the interval [7,12) points. The objective of this study was to enclose the populations in projects with similar CT development and compare them. The total number of this data set was 184 projects and we chose the same populations.
 
@@ -473,12 +473,12 @@ We selected those projects whose CT development obtained with Dr. Scratch in D2 
 \end{itemize}
 
 
-\subsubsection{RQ3. Test \textit{t-student} without deciles}
+\subsubsection{RQ3. \textit{t-student} test without deciles}
 \label{subsubsec:rq3_t_student_no_deciles}
 
-We found very significant results both in RQ1 and RQ2, as we will describe in the chapter~\ref{chap:results}. However, we realized that we were comparing very similar projects in each decile and the analysis was not reliable. In addition, we found in the results a very alarming fact: Dr. Scratch tool could assess positively the presence of bad smells. 
+We found very significant results both in RQ1 and RQ2, as we will describe in Chapter~\ref{chap:results}. However, we realized that we were comparing very similar projects in each decile and the analysis was not reliable. In addition, we found in the results a very alarming fact: Dr. Scratch tool could assess positively the presence of bad smells. 
 
-Therefore, we repeated the test \textit{t-student} with another proposal. In this case, we selected only two snapshots for each project: the first snapshot in which the project got 7 points of CT development, and the last snapshot of the project. We call each situation as D0 and D1, respectively.
+Therefore, we repeated the \textit{t-student} test with another proposal. In this case, we selected only two snapshots for each project: the first snapshot in which the project got 7 points of CT development, and the last snapshot of the project. We call each situation as D0 and D1, respectively.
 
 \begin{itemize}
     \item[--] D0: The first snapshot in which the project gets 7 points in the CT development, measured with Dr. Scratch. 
@@ -498,10 +498,10 @@ The data set extracted consisted of 452 snapshots, divided in 226 snapshots for 
     \label{table:distribution_without_deciles}
 \end{table}
 
-\subsubsection{RQ3.1. Test \textit{t-student} without deciles for the total number of bad smells}
+\subsubsection{RQ3.1. \textit{t-student} test without deciles for the total number of bad smells}
 \label{subsubsec:RQ3_1_statistical}
 
-The first research question was carried out with the total number of bad smells, that is, the sum of each type of bad smell. With this analysis, we wanted to verify the same concepts than in RQ1. We selected two populations and developed again the test \textit{t-student}.
+The first research question was carried out with the total number of bad smells, that is, the sum of each type of bad smell. With this analysis, we wanted to verify the same concepts than in RQ1. We selected two populations and developed again the \textit{t-student} test.
 
 \begin{itemize}
     \item[--] Population A: Projects in D1 which had less than 5 bad smells in D0 (N=129).
@@ -509,10 +509,10 @@ The first research question was carried out with the total number of bad smells,
 \end{itemize}
 
 
-\subsubsection{RQ3.2. Test \textit{t-student} without deciles for default naming}
+\subsubsection{RQ3.2. \textit{t-student} test without deciles for default naming}
 \label{subsubsec:RQ3_2_statistical}
 
-We repeated the test \textit{t-student} for each bad smell independently, in order to avoid the noise introduced by the sum of all of them.
+We repeated the \textit{t-student} test for each bad smell independently, in order to avoid the noise introduced by the sum of all of them.
 
 In addition, we selected several cases of study for each analysis by modifying the percentage of the population B. We started with a low percent in case 1 and we increased it in each case. In other words, we wanted to show the differences in the evolution based on different percents of bad smells in population B.
 
@@ -540,7 +540,7 @@ In addition, we selected several cases of study for each analysis by modifying t
 \end{itemize}
 
 
-\subsubsection{RQ3.3. Test \textit{t-student} without deciles for duplicated code}
+\subsubsection{RQ3.3. \textit{t-student} test without deciles for duplicated code}
 \label{subsubsec:RQ3_3_statistical}
 
 The data set composed of projects with duplicated code was too small. For that reason, we only selected one case of study with the following populations. 
@@ -551,7 +551,7 @@ The data set composed of projects with duplicated code was too small. For that r
 \end{itemize}
 
 
-\subsubsection{RQ3.4. Test \textit{t-student} without deciles for dead code}
+\subsubsection{RQ3.4. \textit{t-student} test without deciles for dead code}
 \label{subsubsec:RQ3_4_statistical}
 
 For the statistical analysis of the dead code, we selected three different cases of study.
@@ -575,7 +575,7 @@ For the statistical analysis of the dead code, we selected three different cases
 \end{itemize}
 
 
-\subsubsection{RQ3.5. Test \textit{t-student} without deciles for attribute initialization}
+\subsubsection{RQ3.5. \textit{t-student} test without deciles for attribute initialization}
 \label{subsubsec:RQ3_5_statistical}
 
 Finally, the last research question was carried out for the attribute initialization. In this case, we selected two different situations for the analysis. 
@@ -597,18 +597,18 @@ Finally, the last research question was carried out for the attribute initializa
 \section{Bad smells model}
 \label{sec:badsmells}
 
-After the development of the full analysis, we discovered that the presence of bad smells in the Scratch projects was very significant, as well as its effect on the CT development. All the results will be detailed in the chapter~\ref{chap:results}. 
+After the development of the full analysis, we discovered that the presence of bad smells in the Scratch projects was very significant, as well as its effect on the CT development. All the results will be detailed in Chapter~\ref{chap:results}. 
 
 From this point, we considered necessary to develop a new environment in the Dr. Scratch tool, in order to show in the first place the results about bad smells and raise awareness about them. We will call this new environment bad smells model. 
 
-As we described in section~\ref{sec:reference}, the dashboard of bad smells in the Dr. Scratch interface was very small and hard to interpret. Therefore, the main objective of this phase was to replace the dashboards, shown in the figure ~\ref{fig:dashboards}, by the new model with more visual information about bad smells, shown in the figure~\ref{fig:bad_smells_model}. The process of developing the bad smells model was composed of different phases.
+As we described in Section~\ref{sec:reference}, the dashboard of bad smells in the Dr. Scratch interface was very small and hard to interpret. Therefore, the main objective of this phase was to replace the dashboards, shown in Figure~\ref{fig:dashboards}, by the new model with more visual information about bad smells, shown in Figure~\ref{fig:bad_smells_model}. The process of developing the bad smells model was composed of different phases.
 
 \subsection{\textit{Scratchblocks} library}
 \label{subsec:scratchblocks}
 
 The dashboard of bad smells showed the information with text format. In this way, it was more difficult to understand the presence of bad smells in the projects and, consequently, to interpret this information and correct them. Therefore, the starting point was to replace the dashboard with the text by visual blocks.
 
-The \textit{scratchblocks} library~\footnote{https://github.com/scratchblocks/scratchblocks} makes pictures of Scratch blocks from text. We included this library in the code of Dr. Scratch and created a new template with four dashboards, one for each bad smell. In addition, we programmed a new script, \textit{sb3\_blocks\_mapper.py}, to map the name of the blocks from the JSON file to the \textit{scratchblocks} library.
+The \textit{scratchblocks} library\footnote{https://github.com/scratchblocks/scratchblocks} makes pictures of Scratch blocks from text. We included this library in the code of Dr. Scratch and created a new template with four dashboards, one for each bad smell. In addition, we programmed a new script, \textit{sb3\_blocks\_mapper.py}, to map the name of the blocks from the JSON file to the \textit{scratchblocks} library.
 
 From this point, we found the problem that the scripts developed in the Phase 1 of this project returned the information about bad smells in a format which \textit{sb3\_blocks\_mapper.py} could not interpret. Therefore, we had to change some functionalities in each script.
 
@@ -623,8 +623,8 @@ In addition, in order to show the results in an easier way to interpret, we adde
 \begin{itemize}
     \item[--] Sprite naming: detection of default naming for more languages (Personatge, Figura, O actor, Personaia).
     \item[--] Backdrop naming: detection of default naming for more languages (Fons, Atzeko oihala).
-    \item[--] Dead code: differentiation of dead code for each sprite, shown in the figure~\ref{fig:dead_code}.
-    \item[--] Duplicated code: differentiation and identification of the sprites who have the duplicated blocks, shown in the figure~\ref{fig:dup_code}.
+    \item[--] Dead code: differentiation of dead code for each sprite, shown in Figure~\ref{fig:dead_code}.
+    \item[--] Duplicated code: differentiation and identification of the sprites who have the duplicated blocks, shown in Figure~\ref{fig:dup_code}.
 \end{itemize}
 
 \begin{figure}
@@ -645,7 +645,7 @@ In addition, in order to show the results in an easier way to interpret, we adde
 \subsection{Integration of the bad smells model in Dr. Scratch}
 \label{subsec:integration_newmodel}
 
-The last step for the development of the bad smells model was its integration in the Dr. Scratch code. When users analyzed a Scratch project with Dr. Scratch, they received the response with all the dashboards. We replaced this template for the template with the new model, which can be observed in the figure~\ref{fig:newmodel}.
+The last step for the development of the bad smells model was its integration in the Dr. Scratch code. When users analyzed a Scratch project with Dr. Scratch, they received the response with all the dashboards. We replaced this template for the template with the new model, which can be observed in Figure~\ref{fig:newmodel}.
 
 \begin{figure}
     \centering
@@ -654,21 +654,21 @@ The last step for the development of the bad smells model was its integration in
     \label{fig:newmodel}
 \end{figure}
 
-In addition, we added a new button to access the old dashboards. In other words, once that users have analyzed their results about bad smells, they can navigate to the rest of dashboards with the CT development results and the download of the certificate. We can observe this functionality in the figure~\ref{fig:button}.
+In addition, we added a new button to access the old dashboards. In other words, once that users have analyzed their results about bad smells, they can navigate to the rest of dashboards with the CT development results and the download of the certificate. We can observe this functionality in Figure~\ref{fig:button}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=8cm,                         keepaspectratio]{img/button.png}
+    \includegraphics[width=11cm,                         keepaspectratio]{img/button.png}
     \caption{Button in the bad smells model to access the rest of the dashboards.}
     \label{fig:button}
 \end{figure}
 
 
-Finally, when the user profile was basic (from 0 to 7 points), the Dr. Scratch tool did not show the dashboard with the information about bad smells. Users who are beginning do not need all this information. For this reason, we though that it was better to avoid the bad smells model for this type of users. When the total mastery is less than seven points, Dr. Scratch shows the normal dashboards instead of the bad smells model, as we can observe in the figure~\ref{fig:basic_level}.
+Finally, when the user profile was basic (from 0 to 7 points), the Dr. Scratch tool did not show the dashboard with the information about bad smells. Users who are beginning do not need all this information. For this reason, we though that it was better to avoid the bad smells model for this type of users. When the total mastery is less than seven points, Dr. Scratch shows the normal dashboards instead of the bad smells model, as we can observe in Figure~\ref{fig:basic_level}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=8cm,                         keepaspectratio]{img/basic_level.png}
+    \includegraphics[width=11cm,                         keepaspectratio]{img/basic_level.png}
     \caption{Interface of Dr. Scratch for users with Basic profile.}
     \label{fig:basic_level}
 \end{figure}
@@ -677,12 +677,41 @@ Finally, when the user profile was basic (from 0 to 7 points), the Dr. Scratch t
 \section{Assessment experiment}
 \label{sec:experiment}
 
-After the development of the bad smells mode and its implementation, we wanted to verify the effectiveness of our study as the last phase of the project. To do this, we designed an assessment experiment.
+After the development of the bad smells model and its implementation, we wanted to verify the effectiveness of our study as the last phase of the project. To do this, we designed an assessment experiment in which two teachers -without any knowledge about bad smells- had to analyze six different Scratch projects, with and without bad smells. In addition, we chose projects with different level of the CT skills, measured with the Dr. Scratch tool. The characteristics of the selected Scratch projects are summarized in Table~\ref{table:scratch_projects_experiment}. The process was based on two phases, as we described in Chapter~\ref{chap:introduction}.
 
-% \begin{itemize}
-%     \item Documento de ética: descripción general del experimento y contexto.
-%     \item Preparación del experimento y recursos necesarios.
-%     \item Recolección de datos del experimento.
-%     \item Desarrollo del experimento.
-%     \item Resultados generales del experimento.
-% \end{itemize}
+\begin{itemize}
+    \item Phase 1: We developed a general form\footnote{https://docs.google.com/forms/d/1VA-tMHbsrg1wpKmsn\_TOv\_kghOkPm2vKb69AxG-dZRU} with a brief description about the experiment. Then, we asked two questions for each Scratch project.
+    \begin{enumerate}
+        \item Evaluate the project from 1 to 10 according to your judgement.
+        \item Justify your evaluation.
+    \end{enumerate}
+    \item Phase 2: We developed a more specific form\footnote{https://docs.google.com/forms/d/1y7bEVjEiY7o0SuNwvD0KCiFCiChBOElr5hBtNXQqT\-I/edit?usp=forms\_home\&ths=true} in which we included a brief description about bad smells and explained the main types that could appear in the projects. Then, we asked five questions for each Scratch project.
+    \begin{enumerate}
+        \item Evaluate the presence of repeated code in the project from 1 to 10.
+        \item Evaluate the presence of dead code in the project from 1 to 10.
+        \item Evaluate the presence of default naming in the project from 1 to 10.
+        \item Evaluate the presence of badly initialized attributes in the project from 1 to 10.
+        \item Would you modify the evaluation of the project, compared to your evaluation in the part 1 of the experiment?
+    \end{enumerate}
+\end{itemize}
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Scratch} & \textbf{Mastery} & \textbf{Duplicated} & \textbf{Dead} & \textbf{Default sprite} & \textbf{Default backdrop} \\
+        \textbf{project} & \textbf{points} & \textbf{code} & \textbf{code} & \textbf{naming} & \textbf{naming} \\ \hline
+        Cooking Mama & 18 & 9 & 7 & 40 & 10 \\ \hline
+        Sky Game & 17 & 3 & 3 & 14 & 0 \\ \hline
+        Cutting Down & 17 & 1 & 0 & 0 & 0 \\ \hline
+        Sea Game & 12 & 7 & 4 & 11 & 2 \\ \hline
+        Environment Game & 12 & 1 & 1 & 0 & 0 \\ \hline
+        Maze Game & 10 & 1 & 1 & 0 & 1 \\ \hline
+    \end{tabular}
+    \caption{Description of the Scratch projects used in the assessment experiment.}
+    \label{table:scratch_projects_experiment}
+\end{table}
+
+With this experiment we wanted to verify some aspects. In the first place, that the bad smells are unperceived by the teachers and they are not aware about their presence. In the second place, if the presence of bad smells have an impact in the human assessment once that they are informed about them.
+
+We expect that, when teachers are aware about bad smells, they change their evaluation and penalize the projects with a worse assessment. In this way, we could confirm that Dr. Scratch is analyzing the presence of bad smells wrongly, as we found during this project. 
