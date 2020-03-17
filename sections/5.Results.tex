@@ -506,4 +506,243 @@ In summary, with a more specific analysis with the \textit{t-student} test and m
 \section{Assessment experiment}
 \label{sec:results_experiment}
 
-Finally, we will show the results collected from the assessment experiment developed. 
+The assessment experiment is a tool to study in a more detailed way the problems found in the functionality of Dr. Scratch during the analysis of bad smells. 
+
+As we described in Chapter~\ref{chap:implementation}, we divided the experiment into two different parts. In the first phase, we asked both teachers a general evaluation of the Scratch projects, without any specific instruction or guide. In the second phase, we asked them to redo the same evaluation, but with an explicit description about bad smells and guided questions about them. We expected a significant change in their assessments. In this way, we could analyze whether the behaviour which teachers develop is the same which we expected from Dr. Scratch in the assessment of bad smells. 
+
+In Figure~\ref{fig:introduction_sections} we can observe the introduction section of the forms for each phase, respectively.  The questions of each part, as well as a brief code description of the Scratch projects, are described in a more detailed way in the Appendix~\ref{app:experiment}.
+
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=8cm]{img/Introduction_phase_1.png}
+    \caption{Phase 1}
+    \label{subfig:introduction_phase_1}
+  \end{subfigure}
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=8cm]{img/Introduction_phase_2.png}
+    \caption{Phase 2}
+    \label{subfig:introduction_phase_2}
+  \end{subfigure}
+    \caption{Introduction sections of the forms used in the assessment experiment.}
+    \label{fig:introduction_sections}
+\end{figure}
+
+
+
+\subsection{First phase}
+\label{subsec:first_phase_experiment}
+
+In the first place, we asked both teachers to evaluate six Scratch projects in a general way and to order them after the analysis. The obtained results are summarized in Table~\ref{table:assessment_experiment_results_1}, where the `Assessment experiment' column contains the evaluation of each teacher -the first score belongs to the assessment of the first teacher and the second one, to the second teacher. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Scratch} & \textbf{Mastery} & \textbf{Dup.} & \textbf{Dead} & \textbf{Sprite} & \textbf{Attribute} & \textbf{Assessment} \\ 
+        \textbf{project} & \textbf{points} & \textbf{code} & \textbf{code} & \textbf{naming} & \textbf{initialization} & \textbf{experiment} \\ \hline
+        Cooking Mama & 18 & 7 & 7 & 40 & 19 & 4 | 4 \\ \hline
+        Sky Game & 17 & 4 & 3 & 14 & 44 & 7 | 9 \\ \hline
+        Cutting Down & 17 & 1 & 0 & 0 & 1 & 8 | 7 \\ \hline
+        Sea Game & 12 & 6 & 4 & 11 & 6 & 2 | 5 \\ \hline
+        Environment Game & 12 & 1 & 1 & 0 & 0 & 4 | 4 \\ \hline
+        Maze Game & 10 & 1 & 1 & 0 & 2 & 2 | 2 \\ \hline
+    \end{tabular}
+    \caption{Results of the assessment in the first phase of the experiment.}
+    \label{table:assessment_experiment_results_1}
+\end{table}
+
+\subsubsection{\textit{Cooking Mama} project}
+\label{subsub:cooking_mama}
+
+In the case of the `Cooking Mama' project, both teachers evaluated it with four out of ten points. Some of the justifications they gave were: `Too many objects', `difficulty understanding the code', `although the program should have more points, I give it a low score because there are numerous generic names and make difficult the legibility of the code'. Therefore, both teachers were able to detect the presence of default sprite naming and they scored the project negatively. On the contrary, Dr. Scratch assesses `Cooking Mama' with 18/21 points of mastery, evaluating only the richness of blocks that the project has, without taking into account the presence of bad smells.
+
+\subsubsection{\textit{Sky Game} project}
+\label{subsub:sky_game}
+
+Regarding the `Sky Game' project, both teachers evaluated it whith higher marks than the previous one. Some of their comments were: `It is a complete and elaborate program, although it has some repeated blocks and the objects should have more specific names', `very elaborate code although it is not very well understood how it works'. Therefore, both of them detected less amount of bad smells and gave to the project a better evaluation than `Cooking Mama'. In this case, we have the same effect on the assessment of Dr. Scratch: high mastery -17/21 points- without taking into account the presence of bad smells in the evaluation.
+
+\subsubsection{\textit{Cutting Down} project}
+\label{subsub:cutting_down}
+
+Despite this project has a few presence of bad smells, both teachers coincided in the same argument: `very simple code, with too many repeated elements'. Again, they detected the presence of duplicated code and penalized partially the project. In this case, although is a simple project with a basic code, Dr. Scratch assesses it with a high punctuation due to the presence of duplicated blocks. 
+
+\subsubsection{\textit{Sea Game} project}
+\label{subsub:sea_game}
+
+The evaluation of `Sea Game' was very low, because it is a project with both bad smells and a basic level of CT development. Teachers commented aspects of the code, such as dead blocks, `there are objects without any functionality' or duplicated code, `there are repeated code (for example, sprite5, sprite8 and sprite9 all order the Ocean Acid variable to be displayed\ldots with doing it once would suffice)'. 
+
+
+\subsubsection{\textit{Environment Game} project}
+\label{subsub:environment_game}
+
+Regarding `Environment Game', both teachers considered it as a basic project giving it a low score. Due to the small amount of bad smells, they justified their assessment based on code failures: `The synchronization between objects is not appropriate', `sending unnecessary messages', 'unnecessary parallelism, it could be done with two conditions within the same loop'. Therefore, in this case in which the presence of bad smells is not very relevant, the evaluations of the teachers -4/10 points- are in-line with the assessment of Dr. Scratch -12/21 points.
+
+
+\subsubsection{\textit{Maze Game} project}
+\label{subsub:maze_game}
+
+Finally, we obtained the same effect in this project. As it is a project without a lot of bad smells, both teachers focused their evaluation in the code. For this reason, both teachers agreed with the assessment of Dr. Scratch and gave to the project the worst evaluation. They underlined aspects such as the disorganization or the lack of coherence in the code and scored it with only two out of ten points.
+
+\subsubsection{Projects order}
+\label{subsub:projects_order_phase_1}
+
+In the last question, we obtained different evaluations, as we can observe in Figure~\ref{fig:projects_order_1}. However, teachers coincided in some aspects: They considered `Maze Game' among the worst projects, `Environment Game' in the middle of the ranking and `Cutting Down' and `Sky Game' among the best projects. 
+
+The projects order is mainly based on the level of CT development considered by the teachers. However, we can appreciate how the presence of bad smells has influenced in their classification. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=16cm,                         keepaspectratio]{img/order_projects_1.png}
+    \caption{Projects order in the first phase of the assessment experiment.}
+    \label{fig:projects_order_1}
+\end{figure}
+
+
+\hfill
+
+In summary, we could conclude with the first phase of the experiment that teachers penalize the presence of bad smells, even without being informed about them. Therefore, when they evaluate projects without many bad smells, they coincide with the assessment of Dr. Scratch. On the contrary, when the projects have a lot of bad smells, they detect them and analyze the projects negatively, in contrast to the assessment of Dr. Scratch. 
+
+Therefore, both teachers developed the expected behaviour in the assessment of bad smells even in the first phase of the experiment.
+
+
+\subsection{Second phase}
+\label{subsec:second_phase_experiment}
+
+In the second phase of the experiment, we asked both teachers to evaluate the same six Scratch projects again, but with a previous explanation about bad smells and more guided questions. In this way, they evaluated each bad smell separately from 0 to 10 points, as they considered. Finally, we requested them to order the projects again, in order to verify whether the knowledge about bad smells could impact in their evaluations. The results obtained in the assessment of each type of bad smell are described below.
+
+
+\subsubsection{Evaluate the presence of repeated code in the project}
+\label{subsubsec:duplicated_code_experiment}
+
+The answers received about the repeated code are summarized in Table~\ref{table:assessment_experiment_dup_code}. The column which contains the assessment of Dr. Scratch describes the number of duplicated scripts found in the code of the Scratch projects. The columns `Teacher A' and `Teacher B' include the evaluations carried out by the teachers respectively, from 0 to 10 points.
+
+We can observe the variety of results even for the same project. For instance, in the case of `Environment Game', \textit{Teacher B} considers that duplicated code has the maximum presence in the code, while \textit{Teacher A} opines the opposite -taking into account that they gave the same punctuation to the project in the first phase of the experiment.
+
+Therefore, we could affirm that the evaluation of the impact which this bad smell has on the projects is subjective and depends on the perception of each person.
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Duplicated Code}} \\ \hline
+        \textbf{Scratch project} & \textbf{Dr. Scratch} & \textbf{Teacher A} & \textbf{Teacher B} \\ \hline
+        Cooking Mama  & 7 & 1 & 4  \\ \hline
+        Sky Game & 4 & 5 & 8 \\ \hline
+        Cutting Down  & 1 & 3 & 5  \\ \hline
+        Sea Game  & 6 & 7 & 6  \\ \hline
+        Environment Game  & 1 & 1 & 10  \\ \hline
+        Maze Game  & 1 & 8 & 1  \\ \hline
+    \end{tabular}
+    \caption{Results of the duplicated code assessment in the second phase of the experiment.}
+    \label{table:assessment_experiment_dup_code}
+\end{table}
+
+
+\subsubsection{Evaluate the presence of dead code in the project}
+\label{subsubsec:dead_code_experiment}
+
+The results obtained in the evaluation of dead code are summarized in Table~\ref{table:assessment_experiment_dead_code}. We can observe the same effect described previously, even more prominent. The results vary much, even being opposed in projects such as `Environment Game' or `Cutting Down'. 
+
+On the other hand, we could consider the possibility of wrong evaluations from teachers, by introducing erroneous values. That fact could explain, for instance, the value of 10 points which \textit{Teacher B} gives to `Cutting Down', taking into account that the project does not have dead blocks. 
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Dead Code}} \\ \hline
+        \textbf{Scratch project} & \textbf{Dr. Scratch} & \textbf{Teacher A} & \textbf{Teacher B} \\ \hline
+        Cooking Mama  & 7 & 2 & 4  \\ \hline
+        Sky Game & 3 & 1 & 8 \\ \hline
+        Cutting Down  & 0 & 1 & 10  \\ \hline
+        Sea Game  & 4 & 9 & 6  \\ \hline
+        Environment Game  & 1 & 1 & 10  \\ \hline
+        Maze Game  & 1 & 3 & 8  \\ \hline
+    \end{tabular}
+    \caption{Results of the dead code assessment in the second phase of the experiment.}
+    \label{table:assessment_experiment_dead_code}
+\end{table}
+
+\subsubsection{Evaluate the presence of default naming in the project}
+\label{subsubsec:default_naming_experiment}
+
+As we can observe in Table~\ref{table:assessment_experiment_default_naming}, we found the same effect in the results of the presence of default naming in the Scratch projects. Again, we could consider some wrong answers. For instance, \textit{Teacher B} evaluates with 10 points the `Environment Game' project or both \textit{Teacher B} and \textit{Teacher A} give high scores to `Maze Game'. 
+
+Therefore, we could not affirm that teachers evaluate bad smells in a subjective way and their answers are not wrong.  
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Default Naming}} \\ \hline
+        \textbf{Scratch project} & \textbf{Dr. Scratch} & \textbf{Teacher A} & \textbf{Teacher B} \\ \hline
+        Cooking Mama  & 40 & 10 & 1  \\ \hline
+        Sky Game & 14 & 9 & 3 \\ \hline
+        Cutting Down  & 0 & 5 & 10  \\ \hline
+        Sea Game  & 11 & 8 & 1  \\ \hline
+        Environment Game  & 0 & 1 & 10  \\ \hline
+        Maze Game  & 0 & 8 & 9  \\ \hline
+    \end{tabular}
+    \caption{Results of the default naming assessment in the second phase of the experiment.}
+    \label{table:assessment_experiment_default_naming}
+\end{table}
+
+
+\subsubsection{Evaluate the presence of badly initialized attributes in the project}
+\label{subsubsec:attribute_initialization_experiment}
+
+Finally, in Table~\ref{table:assessment_experiment_attribute_initialization} are summarized the results of the attribute initialization assessment. In this case, we can observe how both teachers give 9 and 10 points to the `Sky Game' project, which contains the highest number of badly initialized attributes.
+
+On the contrary, we observe possible wrong evaluations in the assessment of the `Environment Game' project -it does not have badly initialized attributes and both teachers evaluate their presence with high marks. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Attribute Initialization}} \\ \hline
+        \textbf{Scratch project} & \textbf{Dr. Scratch} & \textbf{Teacher A} & \textbf{Teacher B} \\ \hline
+        Cooking Mama  & 19 & 1 & 2  \\ \hline
+        Sky Game & 44 & 9 & 10 \\ \hline
+        Cutting Down  & 1 & 1 & 9  \\ \hline
+        Sea Game  & 6 & 5 & 9  \\ \hline
+        Environment Game  & 0 & 6 & 9  \\ \hline
+        Maze Game  & 2 & 5 & 3  \\ \hline
+    \end{tabular}
+    \caption{Results of the attribute initialization assessment in the second phase of the experiment.}
+    \label{table:assessment_experiment_attribute_initialization}
+\end{table}
+
+
+\subsubsection{Would you modify the evaluation of the project, compared to your evaluation in the phase 1 of the experiment?}
+\label{subsubsec:modification_experiment}
+
+In this question, we expected significant changes. However, in the first phase of the experiment, the teachers evaluated the Scratch projects taking into account the presence of bad smells. In this way, they justified their evaluations based on the amount of bad smells, unconsciously.
+
+Therefore, when they received the information about bad smells, they did not change their assessments. Only in the `Sky Game' project, \textit{Teacher B} commented: `I would lower the mark a little, I think I gave the project a very high score'. 
+
+
+\subsubsection{Projects order}
+\label{subsubsec:projects_order_2}
+
+In the last question, \textit{Teacher B} maintained the same order than in the previous phase. Therefore, the knowledge about bad smells and its specific evaluation did not impact on his initial assessment.
+
+On the contrary, \textit{Teacher A} decided to change the order, penalizing the `Maze Game' project and improving the `Cooking Mama' and `Sky Game' projects, as we can observe in Figure~\ref{fig:projects_order_2}. After analyzing his answers, the reasons could be very different: an impact on the perception of the projects due to the presence of bad smells, wrong answers as we described previously or difficulty to understand each type of bad smell explained, among others. Therefore, in this case we could not verify whether the knowledge about bad smells has an impact on his initial assessment.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=16cm,                         keepaspectratio]{img/order_projects_2.png}
+    \caption{Projects order in the second phase of the assessment experiment.}
+    \label{fig:projects_order_2}
+\end{figure}
+
+\hfill
+
+In summary, throughout the second phase of the experiment we obtained, in some extend, illogical results. The reasons could be the misunderstood of the explanation of each type of bad smell, the description of the questions or, consequently, the wrong answers obtained. Therefore, we did not find the impact that we expected.
+
+However, during the first phase of the experiment we obtained the results that we expected: the impact of bad smells in the assessment of Scratch projects. 
+
+Therefore, we should dedicate more time in explanations about bad smells, in order to inform properly about their presence and impact. In this way, we could avoid its unconscious evaluation and raise awareness about their importance.
