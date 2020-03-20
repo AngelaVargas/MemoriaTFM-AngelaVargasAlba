@@ -10,22 +10,30 @@
 
 In this chapter, all the phases of the project mentioned above are detailed. The evolution of each process and its description, as well as the problems encountered, are described in each section.
 
+\section{Documentation and training}
+\label{sec:documentation}
+
+The beginning of the project was mainly based on a period of training and documentation. During the first months of this work, as we described in Chapter~\ref{chap:objectives}, it was necessary a previous formation in aspects such as CT, the Scratch language, Dr. Scratch and its architecture or the concept of bad smells, among others.
+
+After this process, we decided to present an article about the Dr. Scratch tool in the 3rd Scientix Conference\footnote{http://www.scientix.eu/es/conference/scx3} celebrated in Brussels, Belgium. This paper, ``Dr. Scratch: Assess Scratch projects for Computational Thinking skills'', was composed of a single page and summarized the general definition of Dr. Scratch and its main characteristics. This congress entailed the first contact with this researching project. 
 
 \section{General architecture of Dr. Scratch} 
 \label{sec:arquitectura}
 
 Dr. Scratch is a client-server tool which analyzes the JSON file of a Scratch project. Its main architecture can be shown in Figure~\ref{fig:architecture}. Clients make HTTP requests to the server, which was allocated in a virtual machine of the Azure platform with Ubuntu 14.04.2 LTS as operative system. It was possible thanks to a free subscription of Microsoft. However, this subscription was over when we were developing the new version and it had to be migrated to the Google Cloud Platform, which will be detailed in Section~\ref{subsec:mig_to_google}. 
 
-The version 2.4.10 of Apache Web Server was installed inside of the virtual machine of Azure, the same as the mod\_wsgi which connects Azure with Django. In order to collect the information, Dr. Scratch used the version 5.5.43 of the MySQL database. 
-
-Hairball and Kurt modules were also installed in the virtual machine because they were necessary for the analysis of the Scratch projects. Kurt is a Python library useful for working with the Scratch project files. Hairball analyzes the JSON file of the Scratch projects and returns the assessment of the CT development and the total number of bad smells that the project has. Hairball analyzes the blocks of the projects through different plugins.
-
  \begin{figure}
     \centering
-    \includegraphics[width=11cm,                         keepaspectratio]{img/Client_Server.png}
+    \includegraphics[width=12cm,                         keepaspectratio]{img/Client_Server.png}
     \caption{General architecture of Dr. Scratch.}
     \label{fig:architecture}
 \end{figure}
+
+The version 2.4.10 of Apache Web Server was installed inside of the virtual machine of Azure, the same as the \textit{mod\_wsgi} module, which connects Azure with Django.
+
+On the other hand, in order to collect the information, Dr. Scratch used the version 5.5.43 of the MySQL database. 
+
+Hairball and Kurt modules were also installed in the virtual machine because they were necessary for the analysis of the Scratch projects. Kurt is a Python library useful for working with the Scratch project files. Hairball analyzes the JSON file of the Scratch projects and returns the assessment of the CT development and the total number of bad smells that the project has. Hairball analyzes the blocks of the projects through different plugins.
 
 
 \subsection{Dr. Scratch 3.0}
@@ -37,14 +45,14 @@ On the other hand, the Scratch community announced the launch of the new Scratch
 
 The most important modification was the structure of the JSON file of the Scratch projects. Hairball and Kurt modules were not compatible with the new format. Therefore, the first step was to modify these modules, since they only supported Scratch 1.4 and Scratch 2.0 versions. 
 
-In order to simplify the software of Dr. Scratch, we decided to remove the modules instead of updating them to the new version - because we thought that it was an easier and more efficient solution. In its place, we programmed some new scripts with the same functionality, but integrated into the main code. In other words, the objective of this process was to develop different scripts which analyzed the CT development and the total number of bad smells in the Scratch projects and integrate them into the Dr. Scratch code.
+In order to simplify the software of Dr. Scratch, we decided to remove the modules instead of updating them to the new version -because we thought that it was an easier and more efficient solution. In its place, we programmed some new scripts with the same functionality, but integrated into the main code. In other words, the objective of this process was to develop different scripts which analyzed the CT development and the total number of bad smells in the Scratch projects and integrate them into the Dr. Scratch code.
 
 Once that the functionality of Hairball and Kurt was replicated, we integrated the scripts in the main code of Dr. Scratch and removed the modules. We describe in more detail each of the scripts below. 
 
 \subsubsection{Mastery}
 \label{subsubsec:mastery}
 
-The \textit{analyzer.py} script analyzes the blocks of the JSON file and returns the punctuation of each of the seven categories of the CT which the Hairball module analyzed, the total mastery and the level of competence of the project. Each category - Flow control, data representation, abstraction, user interactivity, synchronization, parallelism and logic - is scored from 0 to 3 points, depending on the type of blocks. The total punctuation is the sum of the points of each category. Therefore, the range of the total mastery is from 0 to 21 points. Depending on the final mastery, the script differentiates three types of profiles (the same as Hairball module): Basic (0 to 7 points), Developing (8 to 15 points) and Proficiency (16 to 21 points). In the Table~\ref{table:competence_level} is detailed the evaluation of the competence levels for each CT concept~\cite{moreno2015dr}.
+The \textit{analyzer.py} script analyzes the blocks of the JSON file and returns the punctuation of each of the seven categories of the CT which the Hairball module analyzed, the total mastery and the level of competence of the project. Each category -flow control, data representation, abstraction, user interactivity, synchronization, parallelism and logic- is scored from 0 to 3 points, depending on the type of blocks. The total punctuation is the sum of the points of each category. Therefore, the range of the total mastery is from 0 to 21 points. Depending on the final mastery, the script differentiates three types of profiles (the same as Hairball module): Basic (0 to 7 points), Developing (8 to 15 points) and Proficiency (16 to 21 points). In Table~\ref{table:competence_level} is detailed the evaluation of the competence levels for each CT concept~\cite{moreno2015dr}.
 
   \begin{table}
     \begin{center}
@@ -69,7 +77,7 @@ The \textit{analyzer.py} script analyzes the blocks of the JSON file and returns
 \subsubsection{Sprite naming}
 \label{subsubsec:sprite_naming}
 
- The \textit{spriteNaming.py} script analyzes the presence of default names in the sprites (Sprite1, Sprite2, \ldots SpriteN) in the JSON file of the Scratch projects. It returns the total number of default sprite names found and the list with all of them.
+The \textit{spriteNaming.py} script analyzes the presence of names by default in the sprites (Sprite1, Sprite2, \ldots, SpriteN) in the JSON file of the Scratch projects. It returns the total number of default sprite names found in the program, as well as a list with all of them.
 
 \subsubsection{Backdrop naming}
 \label{subsubsec:backdrop_naming}
@@ -79,7 +87,9 @@ The \textit{backdropNaming.py} script analyzes the presence of default names of 
 \subsubsection{Duplicated code}
 \label{subsubsec:dup_code}
 
-The \textit{duplicatedScripts.py} script analyzes the repeated block structures. It detects scripts, with more than five blocks, which are repeated in the same sprite or in a different one. It returns a dictionary in which the keys are the name of the sprites that have repeated code and the values are the duplicated scripts, respectively. In addition, it returns the total number of duplicated scripts found.
+The \textit{duplicatedScripts.py} script analyzes the repeated block structures. It detects scripts, with more than five blocks, which are repeated in the same sprite or in a different one. It returns a dictionary in which the keys are the name of the sprites that have repeated code and the values are the duplicated scripts, respectively. In addition, it returns the total number of duplicated scripts found. 
+
+An example of the response obtained is shown below. In this case, there are three sprites -\textit{Elephant}, \textit{Bear} and \textit{Penguin}- which contain in their code the same script duplicated, composed of five blocks.
 
 {\footnotesize
 \begin{verbatim}
@@ -95,10 +105,10 @@ The \textit{duplicatedScripts.py} script analyzes the repeated block structures.
 The \textit{deadCode.py} script analyzes unreachable code in isolated blocks or in block structures in the Scratch project. The different situations that it may detect are:
 
 \begin{itemize}
-    \item Empty loop blocks: control blocks which do not have other blocks inside. 
+    \item Empty loop blocks: control blocks -\textit{forever}, \textit{wait} or \textit{if else} blocks- which do not have other blocks inside. 
     \item Empty conditions: control blocks which do not have conditions to execute the code inside of them.
-    \item Hat blocks: structures which do not start with an event block (green flag, key pressed, etc.).
-    \item Not message: scripts which start with \textit{When broadcast received} block, but this message is never sent. 
+    \item Hat blocks: structures which do not start with an event block, such as \textit{green flag} or \textit{key pressed}, among others.
+    \item Not message: scripts which start with the \textit{when broadcast received} block, but this message is never sent. 
     \item Dead code: blocks that do not have parent or next blocks. Isolated blocks that are never executed.
 \end{itemize}
 
@@ -107,7 +117,7 @@ Finally, this script returns a list of the dead blocks (scripts or isolated bloc
 \subsubsection{Attribute initialization}
 \label{subsubsec:att_initialization}
 
-The \textit{attributeInitialization.py} script tried to replace the Hairball plugin that checked if modified attributes were properly initialized. There are many blocks related to attributes in Scratch: costume, orientation, position, size and visibility. Due to the complexity of the code to analyze whether all of these properties were correctly initialized, it was so complicated to develop the same code in a script. Finally it did not work properly and the new script did not replace perfectly the plugin. For that reason, in the new version of Dr. Scratch this bad smell is not included.
+The \textit{attributeInitialization.py} script tried to replace the Hairball plugin that checked if modified attributes were properly initialized. There are many blocks related to attributes in Scratch: costume, orientation, position, size and visibility. Due to the complexity of the code to analyze whether all of these properties were correctly initialized, it was so complicated to develop the same code in a script. Finally it did not work properly and the new script did not replace perfectly the plugin. For this reason, in the new version of Dr. Scratch this bad smell is not included.
 
 \hfill
 
@@ -131,13 +141,13 @@ Thanks to an educational subscription, we had a free trial period of the service
 
 After correcting some small errors during the trial period, such as the download of certificates or the change of language,  we configured the official virtual machine of Azure with both versions of Dr. Scratch, as we observe in Figure~\ref{fig:migrations} c). Again, it was possible thanks to the configuration of the \textit{httpd.conf} file of Apache. 
 
-Finally, in January 2019 we launched the new version. Dr. Scratch 3.0 was allocated in the \textit{www.drscratch.org} domain. Its main page contained a link which redirected to the old version, allocated in the \textit{www.drscratch.org/v2} domain. We can observe the main interface of the tool in the figure ~\ref{fig:dr_scratch}.
+Finally, in January 2019 we launched the new version. Dr. Scratch 3.0 was allocated in the \textit{www.drscratch.org} domain. Its main page contained a link which redirected to the old version, allocated in the \textit{www.drscratch.org/v2} domain. We can observe the main interface of the tool in Figure~\ref{fig:dr_scratch}.
 
 
 \subsection{Migration of Dr. Scratch 3.0 to Google Cloud Platform}
 \label{subsec:mig_to_google}
 
-In April 2019, the funding which we received from Microsoft was over and we studied different options to allocate Dr. Scratch. Finally, the best solution found was to migrate the application to the Google Cloud technology, as we can observe in the figure \ref{fig:migrations} d).
+In April 2019, the funding which we received from Microsoft was over and we studied different options to allocate Dr. Scratch. Finally, the best solution found was to migrate the application to the Google Cloud technology, as we can observe in Figure~\ref{fig:migrations} d).
  
 We received a grant from the GCP Research and, thanks to that, we configured the new services. We deployed a new virtual machine with 18.04.4 Linux as operative system. In addition, we updated MySQL to the 5.7.28 version. We migrated both versions to the new platform and we configured again the Apache module. It was a quick process and we had a short trial period. After solving small problems, we got a stable version which is working at present.
 
@@ -145,19 +155,21 @@ We received a grant from the GCP Research and, thanks to that, we configured the
 \section{Analysis of bad smells}
 \label{sec:analysis}
 
-Despite the new version Dr. Scratch 3.0 was stable in the Google Cloud Platform, all the analysis of bad smells was carried out with Dr. Scratch 2.0. The reason was that the data set used in the analysis were composed of projects designed with the old version of Scratch, that is, with the \textit{.sb2} extension  and its corresponding format.
+Despite the new version Dr. Scratch 3.0 was stable in the Google Cloud Platform, all the analysis of bad smells was carried out with Dr. Scratch 2.0. The reason was that the data set used in the analysis was composed of projects designed with the old version of Scratch, that is, with the \textit{.sb2} extension and its corresponding format.
 
-Therefore, both data sets were analyzed with the Hairball module of Dr. Scratch 2.0. The Dr. Scratch tool in the previous version identified four different types of bad smells that can be present in Scratch projects: copy and pasted code (duplicate scripts) ~\cite{robles2017software}, the use of default names for sprites (default names), code that is never being executed (dead code), and variables that are not correctly initialized (attribute initialization). Their description and characteristics, as well as their impact in the CT development, are summarized in Table~\ref{table:bad_smells}.
+Therefore, both data sets were analyzed with the Hairball module of Dr. Scratch 2.0. The Dr. Scratch tool in the previous version identified four different types of bad smells that can be present in Scratch projects~\cite{robles2017software}: copy and pasted code (duplicate scripts), the use of default names for sprites (default names), code that is never being executed (dead code), and variables that are not correctly initialized (attribute initialization).
+
+Their description and characteristics, as well as their impact in the CT development, are summarized in Table~\ref{table:bad_smells}.
 
 \begin{table}
  \begin{center}
   \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
     \hline
     \textbf{Bad Smell Type} & \textbf{Definition} & \textbf{Impact on Learning} \\ \hline
-    \textbf{Duplicate scripts} & Code is copy and pasted, sometimes with minor changes & It hinders the use of user-defined blocks and as such can be seen a limitation to the development of the abstraction skill \\ \hline
+    \textbf{Duplicated scripts} & Code is copy and pasted, sometimes with minor changes & It hinders the use of user-defined blocks and as such can be seen a limitation to the development of the abstraction skill \\ \hline
     \textbf{Default names} & Objects are not given a meaningful name, but keep the default {\em SpriteN} name & It hinders interaction among objects, as using them in other objects becomes more difficult \\ \hline
     \textbf{Dead code} & Code that is never being executed (usually because they do not have a starting condition) & It may indicate missing functionality \\ \hline
-    \textbf{Attribute initialization} & Variables are not well initialized & It hinders the start of some objects, because their position, size, costume, etc are not correctly initialized \\ \hline
+    \textbf{Attribute initialization} & Variables are not well initialized & It hinders the start of some objects, because their position, size or costume, among others, are not correctly initialized \\ \hline
   \end{tabular}
   \caption{Description of bad smells and their impact on learning.}
   \label{table:bad_smells}
@@ -188,25 +200,27 @@ In order to analyze the presence of bad smells, as well as their relationship wi
 
 Data set a was created and studied in another, previous research~\cite{troiano2019my}. A group of 438 students designed games for STEM using Scratch 2.0. During this process, the authors obtained snapshots of the process each minute during a period of time -only if the project registered changes-, in order to show a timeline evolution. The total number of projects without taking into account the replicas over time, was 771. The total number of snapshots over time were 62,074, with an average of 78 snapshots per project.
 
-As a result, the complete data set was comprised of 62,074 samples formed by the different snapshots of each project~\footnote{https://drive.google.com/drive/u/0/folders/1tDI6nx2f6344xJAKeUeWBeTg0YzxE3bO}. The objective of storing snapshots was to analyze the same 771 projects in different points of time.
+As a result, the complete data set was comprised of 62,074 samples formed by the different snapshots of each project\footnote{https://drive.google.com/drive/u/0/folders/1tDI6nx2f6344xJAKeUeWBeTg0YzxE3bO}. The objective of storing snapshots was to analyze the same 771 projects in different points of time.
 
 \subsubsection{Data set b}
 \label{subsubsec:dataser_b}
 
-Data set b was also created and analyzed in another previous research~\cite{aivaloglou2017dataset}. This data set contained 250,163 Scratch projects, from more than 100,000 different users of its community. These projects were scraped from the Scratch repository. The scraper and all the project files are available in the GitHub repository \textit{TU Delft Scratch Research Team}~\footnote{https://github.com/TUDelftScratchLab/ScratchDataset}. From this repository, we stored the useful data in two CSV files, \textit{metadata.csv} and \textit{code.csv}. These files included, for each Scratch project, its metadata -user name, total views, url of the project, etc.- and information about its code -sprite types, block types, total blocks, CT development of the Dr. Scratch assessment. 
+Data set b was also created and analyzed in another previous research~\cite{aivaloglou2017dataset}. This data set contained 250,163 Scratch projects, from more than 100,000 different users of its community. These projects were scraped from the Scratch repository. The scraper and all the project files are available in the GitHub repository \textit{TU Delft Scratch Research Team}\footnote{https://github.com/TUDelftScratchLab/ScratchDataset}.
+
+From this repository, we stored the useful data in two CSV files, \textit{metadata.csv} and \textit{code.csv}. These files included, for each Scratch project, its metadata -user name, total views or the project URL, among others- and information about its code -sprite types, block types, total blocks or CT development of the Dr. Scratch assessment, among others-, respectively.
 
 
 \subsection{Data collection}
 \label{subsec:datacollection}
 
-From this point, we needed to create our own CSV files from the data set described in the section~\ref{subsec:descrip_dataset}. The process of the data set construction for the analysis is detailed below.
+From this point, we needed to create our own CSV files from the data set described above. The process of the data set construction for the analysis is detailed below.
 
 \subsubsection{Data set a}
 \label{subsubsec:datacollection_a}
 
 In order to analyze the 62,074 snapshots with the Dr. Scratch tool, it was necessary to design a script. This script, \textit{projects\_analyzer.py}, was programmed in Python. Its main function was to open each folder with the Scratch project and analyze its JSON file. As we mentioned previously, the analysis was carried out with the Hairball module and all its plugins. The result obtained from the script was a CSV file, \textit{evolution\_time\_results.csv}, with the information necessary for the analysis: the total mastery, the score of each category of the CT, data about bad smells and data about the blocks.
 
-During the analysis process, we found 2,158 erroneous snapshots due to different reasons: the project was saved incorrectly, the code contained special characters, some field was empty, etc. In this way, the final set of valid samples for the analysis was comprised of 59,916 snapshots and 754 projects.
+During the analysis process, we found 2,158 erroneous snapshots due to different reasons: the project was saved incorrectly, the code contained special characters or some field was empty, among others. In this way, the final set of valid samples for the analysis was comprised of 59,916 snapshots and 754 projects.
 
 On the other hand, we programmed another script to analyze the latest registered version of each project. In other words, we designed a script which analyzed the 771 projects without the timeline evolution. The result obtained was another CSV file, \textit{final\_projects\_results.csv}, with the same structure than \textit{evolution\_time\_results.csv}, but storing only the last snapshot of each project. Again, we found the same erroneous samples and the final valid data set was comprised of 754 projects.
 
@@ -229,7 +243,9 @@ The statistics and distribution of valid projects and snapshots for the analysis
 \subsubsection{Data set b}
 \label{subsubsec:datacollection_b}
 
-The size of the data set b was much bigger than the data set a. For this reason, we found complications when we tried to open the file \textit{code.csv} and analyze it. Its analysis with a Python script was too slow and required too much storage space. Finally, the solution was to create a jupyter notebook and read and analyze the file line by line. In this way, we could join and select the useful information from the \textit{code.csv} and \textit{metadata.csv} files. The result of the jupyter notebook was a new CSV file, \textit{final\_dataset.csv}, composed of the useful data from both files and with the structure which we wanted for the analysis: total mastery, the score of each category of CT and information about bad smells and the blocks. 
+The size of the data set b was much bigger than the data set a. For this reason, we found complications when we tried to open the file \textit{code.csv} and analyze it. Its analysis with a Python script was too slow and required too much storage space.
+
+Finally, the solution was to create a Jupyter notebook and read and analyze the file line by line. In this way, we could join and select the useful information from the \textit{code.csv} and \textit{metadata.csv} files. The result of the Jupyter notebook was a new CSV file, \textit{final\_dataset.csv}, composed of the useful data from both files and with the structure which we wanted for the analysis: total mastery, the score of each category of CT and information about bad smells and the blocks. 
 
 During the analysis process, we found wrong projects again. We found null data in the \textit{metadata.csv} file and special characters in the \textit{code.csv}. Finally, the number of valid projects was 231,024. The statistics of the valid samples for the data set b are summarized in Table~\ref{table:datacollection_b}.
 
@@ -249,7 +265,7 @@ During the analysis process, we found wrong projects again. We found null data i
 \subsection{General analysis}
 \label{subsec:generalanalysis}
 
-The main objective of this phase was to analyze the presence of several bad smells in Scratch projects and how they relate to the development of CT skills. We carried out a preliminary analysis with the data set a in order to analyze to what extent bad smells are present in Scratch projects and what is its impact. Then, we repeated the same analysis with data set b in order to verify the results with a bigger set of projects. We developed both analysis with jupyter notebook, based on the CSV files generated in the previous section. 
+The main objective of this phase was to analyze the presence of several bad smells in Scratch projects and how they relate to the development of CT skills. We carried out a preliminary analysis with the data set a in order to analyze to what extent bad smells are present in Scratch projects and what is its impact. Then, we repeated the same analysis with data set b in order to verify the results with a bigger set of projects. We developed both analysis with Jupyter notebook, based on the CSV files generated in the previous section. 
 
 The starting point of the general analysis was to raise the main research questions that we wanted to analyze. All the proposal, as well as the development of the analysis and the results obtained, were published in the paper ``Bad Smells in Scratch Projects: A Preliminary Analysis''~\cite{vargas2019bad}. We developed this paper for the EC-TEL congress\footnote{http://www.ec-tel.eu/} and we presented it in the TACKLE workshop\footnote{https://sites.google.com/site/2019tackleworkshop/home} (the 2nd Systems of Assessments for Computational Thinking Learning) in Delft, Netherlands.
 
@@ -291,7 +307,7 @@ After the general preliminary analysis, we decided to deepen the study and devel
 \begin{itemize}
     \item To analyze the behaviour and distribution of each type of bad smell through Dr. Scratch, during the timeline of the projects.
     \item To analyze the impact on the development of the CT skills.
-    \item To carry out a \textit{t-student} statistical study in order to measure the effect that bad smells have throughout a period of time. 
+    \item To carry out a statistical \textit{t-student} study in order to measure the effect that bad smells have throughout a period of time. 
 \end{itemize}
 
 In order to develop these objectives, we compared two main groups or populations. The first of them was a set of projects with a few amount of bad smells and the other one, a set of projects with a huge amount of bad smells, in a given initial state. Afterwards, we wanted to know if they showed a different timeline evolution.
@@ -332,23 +348,23 @@ Finally, in order to avoid redundant information, we only stored the last regist
         \textbf{Participating projects} & 0 & 597 & 78.0 & 82.1 \\ \hline
         \textbf{Valid projects} & 11 & 597 & 109.3 & 77.8 \\ \hline
     \end{tabular}
-    \caption{Distribution of the snapshots in the processed data set for the statistical analysis with deciles.}
+    \caption{Snapshot distribution in the processed data set for the statistical analysis with deciles.}
     \label{table:statistical_analysis_distribution_snapshots}
 \end{table}
 
 \begin{figure}
   \centering
-  \begin{subfigure}{7cm}
-    \includegraphics[width=7cm]{img/snapshots_participant_projects.png}
+  \begin{subfigure}{9cm}
+    \includegraphics[width=9cm]{img/snapshots_participant_projects.png}
     \caption{Participant projects}
     \label{subfig:participant_projects}
   \end{subfigure}
-  \begin{subfigure}{7cm}
-    \includegraphics[width=7cm]{img/snapshots_valid_projects.png}
+  \begin{subfigure}{9cm}
+    \includegraphics[width=9cm]{img/snapshots_valid_projects.png}
     \caption{Valid projects}
     \label{subfig:valid_projects}
   \end{subfigure}
-  \caption{Distribution of snapshots for the statistical analysis with deciles.}
+  \caption{Snapshot distribution for the statistical analysis with deciles.}
   \label{fig:distribution_snapshots_deciles}
 \end{figure} 
 
@@ -419,7 +435,7 @@ In order to verify this effect, we analyzed the ratio between the mean value of 
     \label{fig:ratio_bad_smells_deciles}
 \end{figure}
 
-\subsubsection{\textit{t-student} test}
+\subsubsection{\textit{T-student} test}
 \label{subsubsec:test_tstudent}
 
 After analyzing the distribution and the characteristics of the data set, we found that the main development was more prominent from the decile D2. Therefore, the most effective populations for the study were in D2 and D9, as the final state. 
@@ -430,13 +446,14 @@ This test allows us to know the probability to obtain results just by chance. If
 
 The variable which we used in the analysis to measure this probability was the \textit{p-value}. By agreement, it is established that a \textit{p-value} less than 0.05 indicates that the result of the analysis is not random and \textit{H0} can be reasonably rejected. Therefore, if the \textit{p-value} is greater than 5\%, we cannot affirm that the differences in the results are reliable.  
 
-In addition, we calculated the \textit{size effect}. This variable measures the magnitude of the effect studied. In other words, if we find differences in the results, we want to measure how is the size of these differences. A value greater than 0.5 indicates that the \textit{size effect} is `large' and the differences are significant.
+In addition, we calculated the \textit{size effect} for each test. This variable measures the magnitude of the effect studied. In other words, if we find differences in the results, we want to measure how is the size of these differences. A value greater than 0.5 indicates that the \textit{size effect} is `large' and the differences are significant.
 
 \subsubsection{Development of the statistical analysis}
 \label{subsubsec:development_statistical_analysis}
 
-After the treatment and analysis of the data set and the choice of the \textit{t-student} test, we developed the study with jupyter notebook. In particular, we implemented the function \textit{ttest\_ind}, which calculates the \textit{t-student} test for the value of two independent groups. We assumed that the populations had no identical variances.
+After the treatment and analysis of the data set and the choice of the \textit{t-student} test, we developed the study with Jupyter notebook. In particular, we implemented the function \textit{ttest\_ind}, which calculates the \textit{t-student} test for the value of two independent groups. For the computation of the \textit{size effect}, we used an automatic online calculator\footnote{https://www.psychometrica.de/effect\_size.html}. 
 
+\hfill
 
 {\footnotesize
 \begin{verbatim}
@@ -444,15 +461,19 @@ After the treatment and analysis of the data set and the choice of the \textit{t
 \end{verbatim}
 }
 
-With this function we obtained the \textit{p-value}. For the computation of the \textit{size effect}, we used an automatic online calculator\footnote{https://www.psychometrica.de/effect\_size.html}.
+\hfill
+
+With this function we obtained the \textit{p-value} -we assumed that the populations had no identical variances.
 
 From this point, we carried out the \textit{t-student} test for different populations in order to find reliable results. We describe each case of study as a research question.
 
 
-\subsubsection{RQ1. \textit{t-student} test with deciles}
+\subsubsection{RQ1. \textit{T-student} test with deciles}
 \label{subsubsec:rq1_t_student_deciles}
 
-In the first place, we carried out an analysis with two general groups. The first of them was composed of a set of projects in D9 which had a few bad smells in D2. The other was a set of projects in D9 which had many bad smells in D2. With this research question we wanted to verify if the population A could present a minor mean value of bad smells in D9 than population B and, in that case, if the differences would be reliable - in terms of \textit{p-value} and \textit{size effect}. In this way, the populations were the following:
+In the first place, we carried out an analysis with two general groups. The first of them was composed of a set of projects in D9 which had a few bad smells in D2. The other one was a set of projects in D9 which had many bad smells in D2. 
+
+With this research question we wanted to verify if the population A could present a minor mean value of bad smells in D9 than population B and, in that case, if the differences would be reliable -in terms of \textit{p-value} and \textit{size effect}. In this way, the populations were the following:
 
 \begin{itemize}
     \item[--] Population A: Projects in D9 which had less than 5 bad smells in D2 (N=168).
@@ -460,12 +481,14 @@ In the first place, we carried out an analysis with two general groups. The firs
 \end{itemize}
 
 
-\subsubsection{RQ2. \textit{t-student} test with deciles for a given CT development}
+\subsubsection{RQ2. \textit{T-student} test with deciles for a given CT development}
 \label{subsubsec:rq2_t_student_deciles_ct}
 
-One of the objectives of this analysis was to measure the impact of bad smells in the CT development. In RQ1, we found significant differences in the level of CT between the two groups of study, as we will describe in chapter~\ref{chap:results}. For this reason, we repeated the \textit{t-student} test, but based on a specific set of projects of the data set. 
+One of the objectives of this analysis was to measure the impact of bad smells in the CT development. In RQ1, we found significant differences in the level of CT between the two groups of study, as we will describe in Chapter~\ref{chap:results}. For this reason, we repeated the \textit{t-student} test, but based on a specific set of projects of the data set. 
 
-We selected those projects whose CT development obtained with Dr. Scratch in D2 was included in the interval [7,12) points. The objective of this study was to enclose the populations in projects with similar CT development and compare them. The total number of this data set was 184 projects and we chose the same populations.
+We selected those projects whose CT development obtained with Dr. Scratch in D2 was included in the interval [7,12) points of mastery. The objective of this study was to enclose the populations in projects with similar CT development and compare them.
+
+Finally, the total number of this data set was 184 projects and we chose the same populations.
 
 \begin{itemize}
     \item[--] Population A: Projects in D9 which had less than 5 bad smells in D2 (N=62).
@@ -473,10 +496,10 @@ We selected those projects whose CT development obtained with Dr. Scratch in D2 
 \end{itemize}
 
 
-\subsubsection{RQ3. \textit{t-student} test without deciles}
+\subsubsection{RQ3. \textit{T-student} test without deciles}
 \label{subsubsec:rq3_t_student_no_deciles}
 
-We found very significant results both in RQ1 and RQ2, as we will describe in Chapter~\ref{chap:results}. However, we realized that we were comparing very similar projects in each decile and the analysis was not reliable. In addition, we found in the results a very alarming fact: Dr. Scratch tool could assess positively the presence of bad smells. 
+We found very significant results both in RQ1 and RQ2, as we will describe in more detail in Chapter~\ref{chap:results}. However, we realized that we were comparing very similar projects in each decile and the analysis was not reliable. In addition, we found in the results a very alarming fact: Dr. Scratch tool could assess positively the presence of bad smells. 
 
 Therefore, we repeated the \textit{t-student} test with another proposal. In this case, we selected only two snapshots for each project: the first snapshot in which the project got 7 points of CT development, and the last snapshot of the project. We call each situation as D0 and D1, respectively.
 
@@ -498,7 +521,7 @@ The data set extracted consisted of 452 snapshots, divided in 226 snapshots for 
     \label{table:distribution_without_deciles}
 \end{table}
 
-\subsubsection{RQ3.1. \textit{t-student} test without deciles for the total number of bad smells}
+\subsubsection{RQ3.1. \textit{T-student} test without deciles for the total number of bad smells}
 \label{subsubsec:RQ3_1_statistical}
 
 The first research question was carried out with the total number of bad smells, that is, the sum of each type of bad smell. With this analysis, we wanted to verify the same concepts than in RQ1. We selected two populations and developed again the \textit{t-student} test.
@@ -509,7 +532,7 @@ The first research question was carried out with the total number of bad smells,
 \end{itemize}
 
 
-\subsubsection{RQ3.2. \textit{t-student} test without deciles for default naming}
+\subsubsection{RQ3.2. \textit{T-student} test without deciles for default naming}
 \label{subsubsec:RQ3_2_statistical}
 
 We repeated the \textit{t-student} test for each bad smell independently, in order to avoid the noise introduced by the sum of all of them.
@@ -540,7 +563,7 @@ In addition, we selected several cases of study for each analysis by modifying t
 \end{itemize}
 
 
-\subsubsection{RQ3.3. \textit{t-student} test without deciles for duplicated code}
+\subsubsection{RQ3.3. \textit{T-student} test without deciles for duplicated code}
 \label{subsubsec:RQ3_3_statistical}
 
 The data set composed of projects with duplicated code was too small. For that reason, we only selected one case of study with the following populations. 
@@ -551,10 +574,10 @@ The data set composed of projects with duplicated code was too small. For that r
 \end{itemize}
 
 
-\subsubsection{RQ3.4. \textit{t-student} test without deciles for dead code}
+\subsubsection{RQ3.4. \textit{T-student} test without deciles for dead code}
 \label{subsubsec:RQ3_4_statistical}
 
-For the statistical analysis of the dead code, we selected three different cases of study.
+For the statistical analysis of the dead code, we selected three different cases of study, described below.
 
 \begin{itemize}
     \item[--] Case 1
@@ -575,7 +598,8 @@ For the statistical analysis of the dead code, we selected three different cases
 \end{itemize}
 
 
-\subsubsection{RQ3.5. \textit{t-student} test without deciles for attribute initialization}
+
+\subsubsection{RQ3.5. \textit{T-student} test without deciles for attribute initialization}
 \label{subsubsec:RQ3_5_statistical}
 
 Finally, the last research question was carried out for the attribute initialization. In this case, we selected two different situations for the analysis. 
@@ -685,7 +709,7 @@ After the development of the bad smells model and its implementation, we wanted 
         \item Evaluate the project from 1 to 10 according to your judgement.
         \item Justify your evaluation.
     \end{enumerate}
-    \item Phase 2: We developed a more specific form\footnote{https://docs.google.com/forms/d/1y7bEVjEiY7o0SuNwvD0KCiFCiChBOElr5hBtNXQqT\-I/edit?usp=forms\_home\&ths=true} in which we included a brief description about bad smells and explained the main types that could appear in the projects. Then, we asked five questions for each Scratch project. Finally, we requested them to order the projects from the worst to the best, according to their judgement. 
+    \item Phase 2: We developed a more specific form\footnote{https://docs.google.com/forms/d/1y7bEVjEiY7o0SuNwvD0KCiFCiChBOElr5hBtNXQqT-I/edit?usp=forms\_home\&ths=true} in which we included a brief description about bad smells and explained the main types that could appear in the projects. Then, we asked five questions for each Scratch project. Finally, we requested them to order the projects from the worst to the best, according to their judgement. 
     \begin{enumerate}
         \item Evaluate the presence of repeated code in the project from 1 to 10.
         \item Evaluate the presence of dead code in the project from 1 to 10.
