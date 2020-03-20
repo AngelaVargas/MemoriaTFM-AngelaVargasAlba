@@ -8,7 +8,7 @@
 \chapter{Results}
 \label{chap:results}
 
-This project is composed of different phases, as we have described throughout the dissertation. In this chapter, we will focus on analyzing the results obtained during the bad smells study and after the development of the assessment experiment.
+This project is composed of different phases, as we have described throughout the dissertation. In this chapter, we will focus on analyzing the results obtained during the bad smells study and afterwards the development of the assessment experiment.
 
 \section{Analysis of bad smells}
 \label{sec:results_analysis}
@@ -18,14 +18,14 @@ In the first place, we will detail the results of the entire study of bad smells
 \subsection{General analysis}
 \label{subsec:results_general}
 
-The general preliminary analysis of bad smells, as we described in the chapter~\ref{chap:implementation}, is focused on answering different questions related to the impact which bad smells have in the Scratch projects. In this section, we detail the results obtained from addressing our research questions using the previously described data set. 
+The general preliminary analysis of bad smells, as we described in Chapter~\ref{chap:implementation}, is focused on answering different questions related to the impact that bad smells have on Scratch projects. In this section, we detail the results obtained from addressing our research questions using the previously described data set. 
 
-\subsubsection{RQ1.To what extent are bad smells present in Scratch projects?}
+\subsubsection{RQ1. To what extent are bad smells present in Scratch projects?}
 \label{subsubsec:rq1_results}
 
-As shown in Table~\ref{table:result_rq1}, bad smells can be found in almost all projects in our data set a - over 97\% of the projects have at least one bad smell. We expected a high share of projects having bad smells, but this result was a surprise for us, as the presence of bad smells is not only more frequent than expected, but almost general.
+As shown in Table~\ref{table:result_rq1}, bad smells can be found in almost all projects in our data set a -over 97\% of the projects have at least one bad smell. We expected a high share of projects having bad smells, but this result was a surprise for us, as the presence of bad smells is not only more frequent than expected, but almost general.
 
-When we repeated the analysis with a larger set of projects, data set b, we found more moderate results. As we can also observe in Table~\ref{table:result_rq1}, around 64\% of the projects have at least one type of bad smell. Although it is still a very high percentage, this result was less alarming to us. These results are summarized in a more visual way in Figure~\ref{fig:rq1_result}.
+When we repeated the analysis with a larger set of projects, data set b, we found more moderate results. As we can also observe in Table~\ref{table:result_rq1}, around 64\% of the projects have at least one type of bad smell. These results are summarized in a more visual way in Figure~\ref{fig:rq1_result}. With RQ2, below, we will show why the datasets show a different behavior.
 
 \begin{table}
  \begin{center}
@@ -47,13 +47,13 @@ When we repeated the analysis with a larger set of projects, data set b, we foun
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
-    \includegraphics[width=9cm]{img/rq1_dataset_a.png}
+    \includegraphics[width=11cm]{img/rq1_dataset_a.png}
     \caption{Data set a}
     \label{subfig:rq1_results_a}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
-    \includegraphics[width=9cm]{img/rq1_dataset_b.png}
+    \includegraphics[width=11cm]{img/rq1_dataset_b.png}
     \caption{Data set b}
     \label{subfig:rq1_results_b}
   \end{subfigure}
@@ -125,7 +125,7 @@ Figure~\ref{subfig:rq3_results_b} not only represents the increase of bad smells
 \subsubsection{RQ4. Can we find a relation among specific bad smells?}
 \label{subsubsec:rq4_results}
 
-From Figure~\ref{subfig:rq4_results_a} (again, this graph is normalized), we can observe that the four different types of bad smells that we have studied have a similar distribution below the proficiency level. The presence of bad smells has a similar behavior for projects up to 17 points of mastery. Then, when the mastery is above 17 points, the behavior of each of them is different: While duplicated scripts and bad attribute initialization continue to slightly grow, the number of dead code blocks grows more abrupt way. However, the number of default names decreases considerably. This last trend may be because in projects with a high number of blocks and objects it is more difficult to program with the default names (Sprite 1, Sprite 2, etc) instead of personalizing them. 
+From Figure~\ref{subfig:rq4_results_a} (again, this graph is normalized), we can observe that the four different types of bad smells that we have studied have a similar distribution below the proficiency level. The presence of bad smells has a similar behavior for projects up to 17 points of mastery. Then, when the mastery is above 17 points, the behavior of each of them is different: While duplicated scripts and bad attribute initialization continue to slightly grow, the number of dead code blocks grows more abrupt way. However, the number of default names decreases considerably. This last trend may be because in projects with a high number of blocks and objects it is more difficult to program with the default names (Sprite1, Sprite2, \ldots) instead of personalizing them. 
 
 In Figure~\ref{subfig:rq4_results_b} we have only data about three types of bad smells. For data set b, the information about attribute initialization was null, so we cannot represent it. 
 
@@ -145,7 +145,7 @@ Regarding the distribution of the other bad smells, all of them grow with a high
     \caption{Data set b}
     \label{subfig:rq4_results_b}
   \end{subfigure}
-    \caption{Evolution of the different types of bad smells with CT mastery (RQ4).}
+    \caption{Evolution of the different types of bad smells throughout the CT development (RQ4).}
     \label{fig:rq4_result}
 \end{figure}
 
@@ -153,7 +153,7 @@ Regarding the distribution of the other bad smells, all of them grow with a high
 \subsubsection{RQ5. To which extent can bad smells be identified in each of the CT development phases?}
 \label{subsubsec:rq5_results}
 
-As already seen wit RQ3, the number of bad smells is higher when the total mastery increases. In Figure~\ref{fig:rq5_result}, we have represented the percentage of projects that have at least a specific type of bad smell for each level of CT proficiency. As we explained in the researching question RQ4, we do not have data about attribute initialization. For this reason, Figure~\ref{subfig:rq5_results_b} only shows three types of bad smells.
+As already seen wit RQ3, the number of bad smells is higher when the total mastery increases. In Figure~\ref{fig:rq5_result}, we have represented the percentage of projects that have at least a specific type of bad smell for each level of CT proficiency. As we explained in RQ4, we do not have data about attribute initialization. For this reason, Figure~\ref{subfig:rq5_results_b} only shows three types of bad smells.
 
 In both data set, the percentage of projects from users with basic level that have bad smells is much smaller than the percentage of projects that require a proficiency level. Although Figure~\ref{subfig:rq5_results_b} presents more moderate results than Figure~\ref{subfig:rq5_results_a}, both trends indicate that all bad smells have an incremental evolution with the increase of CT efficiency.
 
@@ -182,7 +182,7 @@ Therefore, it seems that bad smells appear in early phases and instead of disapp
 
 The statistical analysis of bad smells is focused in a more specific study about the impact which bad smells have in our variable of interest, CT development. In this section, we describe the results obtained from the proposed research questions. 
 
-\subsubsection{RQ1. Test \textit{t-student} with deciles}
+\subsubsection{RQ1. \textit{T-student} test with deciles}
 \label{subsubsec:rq1_statistical_results}
 
 In the first place, we analyzed the impact that bad smells have in the CT development in a general way.
@@ -192,7 +192,7 @@ In the first place, we analyzed the impact that bad smells have in the CT develo
     \item[--] Population B: Projects in D9 which had more than 20 bad smells in D2 (N=95).
 \end{itemize}
 
-We found very interesting results. Except for \textit{dead code}, the results are very accurate. The \textit{p-value} of all of them is below 0.05, which implies that the differences between `Mean A' and `Mean B' are significant and not random. In other words, we found different evolution in both population and we could confirm that projects with a few bad smells in the beginning of a learning process, will have less bad smells in a period of time than projects which started with a higher value of bad smells. 
+We found very interesting results. Except for \textit{dead code}, the results are statistically significant (i.e., the \textit{p-value} of all of them is below 0.05, which implies that the differences between `Mean A' and `Mean B' are significant and not random). In other words, we found a  different evolution between both populations and we could confirm that projects with a few bad smells in the beginning of a learning process, will have less bad smells in a period of time than projects which started with a higher value of bad smells. 
 
 In addition, the \textit{size effect} presents a value about 0.5 or greater for all of them, except for the total number of bad smells. This may be caused by the noise introduced in the sum of all of them. These results are summarized in Table~\ref{table:rq1_statistical_results}.
 
@@ -210,7 +210,7 @@ However, we can observe in Table~\ref{table:rq1_statistical_results_mean} how th
     Attribute initialization & 4.23 & 12.68 & \textbf{5.576e-7} & -0.685 \\ \hline
     Total bad smells & 10.32 & 57.53 & \textbf{0.005191} & -0.367 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} with deciles (RQ1).}
+  \caption{Results for the \textit{t-student} test with deciles (RQ1).}
   \label{table:rq1_statistical_results}
  \end{center}
 \end{table}
@@ -230,10 +230,10 @@ However, we can observe in Table~\ref{table:rq1_statistical_results_mean} how th
 
 
 
-\subsubsection{RQ2. Test \textit{t-student} with deciles for a given CT development}
+\subsubsection{RQ2. \textit{T-student} test with deciles for a given CT development}
 \label{subsubsec:rq2_statistical_results}
 
-As we described in the chapter~\ref{chap:implementation}, we repeated the analysis with projects whose CT level was included in the interval [7,12). 
+As we described in Chapter~\ref{chap:implementation}, we repeated the analysis with projects whose CT level was included in the interval [7,12). 
 
 \begin{itemize}
     \item[--] Population A: Projects in D9 which had less than 5 bad smells in D2 (N=62).
@@ -241,10 +241,6 @@ As we described in the chapter~\ref{chap:implementation}, we repeated the analys
 \end{itemize}
 
 From this point, we obtained slightly worse results. Regarding \textit{duplicated code}, the \textit{p-value} obtained is greater than 0.05, so we cannot confirm that the differences between the mean value of bad smells in population A and population B are significant and not random.  The results are summarized in Table~\ref{table:rq2_statistical_results}.
-
-On the other hand, the mean values of CT development in D2 are similar for each group, with a value of 9.45 points for population A and 9.81 points for population B, as we can observe in Table~\ref{table:rq2_statistical_results_mean}. However, the evolution of CT skills in D9 is not as we expected. Not only are very similar values, but they are slightly higher for population B. This result could imply that Dr. Scratch tool assess bad smells positively instead of penalizing them.
-
-In order to verify this suppose, we repeated the analysis with other proposal and without deciles, as we described in RQ3.
 
 \begin{table}
  \begin{center}
@@ -257,10 +253,12 @@ In order to verify this suppose, we repeated the analysis with other proposal an
     Attribute initialization & 3.97 & 11.86 & \textbf{0.020254} & -0.634 \\ \hline
     Total bad smells & 9.37 & 32.10 & \textbf{0.000208} & -1.107 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} with deciles for a given CT development (RQ2).}
+  \caption{Results for the \textit{t-student} test with deciles for a given CT development (RQ2).}
   \label{table:rq2_statistical_results}
  \end{center}
 \end{table}
+
+On the other hand, the mean values of CT development in D2 are similar for each group, with a value of 9.45 points for population A and 9.81 points for population B, as we can observe in Table~\ref{table:rq2_statistical_results_mean}. However, the evolution of CT skills in D9 is not as we expected. Not only are the values very similar; they are slightly higher for population B. This result could imply that Dr. Scratch assesses bad smells positively instead of penalizing them.
 
 \begin{table}
  \begin{center}
@@ -276,8 +274,11 @@ In order to verify this suppose, we repeated the analysis with other proposal an
 \end{table}
 
 
+In order to verify this hypothesis, we repeated the analysis with other populations and without deciles.
 
-\subsubsection{RQ3.1. Test \textit{t-student} without deciles for the total number of bad smells}
+
+
+\subsubsection{RQ3.1. \textit{T-student} test without deciles for the total number of bad smells}
 \label{subsubsec:RQ3_1_statistical_results}
 
 The first analysis was developed in a general way for all bad smells.
@@ -288,12 +289,7 @@ The first analysis was developed in a general way for all bad smells.
 \end{itemize}
 
 
-The results were not significant, since the \textit{p-value} and the \textit{size effect} were not relevant in any bad smell, as we can observe in Table~\ref{table:rq3_1_statistical_results}. We thought that these bad results were due to the noise introduced in the sum and the general analysis of each bad smell. For these reasons, we developed 
-more specifically the test \textit{t-student} for each type of bad smell. 
-
-On the other hand, nor did we find significant differences in the evaluation of the CT score by Dr. Scratch. As it is shown in Table~\ref{table:rq3_1_statistical_results_mean}, the mean value of CT development in D1 is so close for population A and population B. Therefore, we could not confirm the suppose found in RQ2. 
-
-
+The results were not significant, since the \textit{p-value} and the \textit{size effect} were not relevant in any bad smell, as we can observe in Table~\ref{table:rq3_1_statistical_results}. We thought that these bad results were due to the noise introduced in the sum and the general analysis of each bad smell. For these reasons, we developed more specifically the \textit{t-student} test for each type of bad smell. 
 
 \begin{table}
  \begin{center}
@@ -306,10 +302,12 @@ On the other hand, nor did we find significant differences in the evaluation of 
     Attribute initialization & 5.42 & 8.88 & 0.499307 & -0.220 \\ \hline
     Total bad smells & 14.88 & 27.73 & 0.191010 & -0.438 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} without deciles for the total number of bad smells (RQ3.1).}
+  \caption{Results for the \textit{t-student} test without deciles for the total number of bad smells (RQ3.1).}
   \label{table:rq3_1_statistical_results}
  \end{center}
 \end{table}
+
+On the other hand, nor did we find significant differences in the evaluation of the CT score by Dr. Scratch. As it is shown in Table~\ref{table:rq3_1_statistical_results_mean}, the mean value of CT development in D1 is so close for population A and population B. Therefore, we could not confirm the hypothesis found in RQ2. 
 
 \begin{table}
  \begin{center}
@@ -326,14 +324,12 @@ On the other hand, nor did we find significant differences in the evaluation of 
 
 
 
-\subsubsection{RQ3.2. Test \textit{t-student} without deciles for default naming}
+\subsubsection{RQ3.2. \textit{T-student} test without deciles for default naming}
 \label{subsubsec:RQ3_2_statistical_results}
 
 In the first place, we realized that the \textit{median} as measure variable was more relevant than the \textit{mean}. For this reason, since this analysis, we used \textit{median} instead of \textit{mean}. 
 
-In the second place, we found very interesting results. The \textit{p-value} for all the study cases was below 0.05, which indicates that the differences between population A and population B are relevant. In addition, the \textit{size effect} had also a good value, around 0.500 for case 1 and greater for the rest of them. These results are summarized in Table~\ref{table:rq3_2_statistical_results}. 
-
-However, we confirmed our suppose in RQ2. As we can observe in Table~\ref{table:rq3_2_statistical_results_median}, the CT score measured by Dr. Scratch in D1 increases with each case -that is, with the increase of the percent of default names-, due to the higher number of blocks and sprites. This result means that Dr. Scratch does not take into account the increase in default names, but only the increase in the number of blocks and sprites.
+In the second place, we found very interesting results. The \textit{p-value} for all the study cases was below 0.05, which indicates that the differences between population A and population B are relevant. In addition, the \textit{size effect} had also a good value, close to 0.5 for case 1 and greater for the rest of them. These results are summarized in Table~\ref{table:rq3_2_statistical_results}. 
 
 \begin{table}
  \begin{center}
@@ -345,10 +341,12 @@ However, we confirmed our suppose in RQ2. As we can observe in Table~\ref{table:
     Case 3 & 0.0 & 6.0 & \textbf{0.000217} & -0.934 \\ \hline
     Case 4 & 0.0 & 6.0 & \textbf{0.000469} & -0.919 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} without deciles for default naming (RQ3.2).}
+  \caption{Results for the \textit{t-student} test without deciles for default naming (RQ3.2).}
   \label{table:rq3_2_statistical_results}
  \end{center}
 \end{table}
+
+However, we confirmed our hypothesis in RQ2. As we can observe in Table~\ref{table:rq3_2_statistical_results_median}, the CT score measured by Dr. Scratch in D1 increases with each case -that is, with the increase of the percent of default names-, due to the higher number of blocks and sprites. This result means that Dr. Scratch does not take into account the increase in default names, but only the increase in the number of blocks and sprites.
 
 
 \begin{table}
@@ -376,12 +374,10 @@ However, we confirmed our suppose in RQ2. As we can observe in Table~\ref{table:
 \end{table}
 
 
-\subsubsection{RQ3.3. Test \textit{t-student} without deciles for duplicated code}
+\subsubsection{RQ3.3. \textit{T-student} test without deciles for duplicated code}
 \label{subsubsec:RQ3_3_statistical_results}
 
 The results of this analysis are not as relevant as the results for default naming, as we can observe in Table~\ref{table:rq3_3_statistical_results}. The \textit{p-value} and the \textit{size effect} do not indicate significant results and we cannot confirm that the presence of duplicated code in the beginning of a learning process impacts in the CT development. 
-
-However, our suppose can be confirmed again. In Table~\ref{table:rq3_3_statistical_results_median} we can observe how the CT score for population B in D1 is higher than the CT score for population A. This result indicates that Dr. Scratch is assessing positively the presence of duplicated code by the simple fact that the project has a larger number of blocks.
 
 \begin{table}
  \begin{center}
@@ -390,10 +386,13 @@ However, our suppose can be confirmed again. In Table~\ref{table:rq3_3_statistic
     \textbf{Duplicated Code} & \textbf{Median A} & \textbf{Median B} & \textbf{p-value} & \textbf{Size effect} \\ \hline
     Case 1 & 0.0 & 1.0 & 0.217311 & -0.455 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} without deciles for duplicated code (RQ3.3).}
+  \caption{Results for the \textit{t-student} test without deciles for duplicated code (RQ3.3).}
   \label{table:rq3_3_statistical_results}
  \end{center}
 \end{table}
+
+
+However, our hypothesis can be confirmed again. In Table~\ref{table:rq3_3_statistical_results_median} we can observe how the CT score for population B in D1 is higher than the CT score for population A. This result indicates that Dr. Scratch is assessing positively the presence of duplicated code by the simple fact that the project has a larger number of blocks.
 
 \begin{table}
  \begin{center}
@@ -413,12 +412,10 @@ However, our suppose can be confirmed again. In Table~\ref{table:rq3_3_statistic
 
 
 
-\subsubsection{RQ3.4. Test \textit{t-student} without deciles for dead code}
+\subsubsection{RQ3.4. \textit{T-student} test without deciles for dead code}
 \label{subsubsec:RQ3_4_statistical_results}
 
 The results of the \textit{t-student} test for dead code are very similar to the analysis of duplicated code. The \textit{p-value} and the \textit{size effect} have not significant values. Therefore, nor can we confirm that the presence of dead code in the beginning of a learning process has an impact in the CT development. These results are summarized in Table~\ref{table:rq3_4_statistical_results}.
-
-Regarding the assessment of Dr. Scratch, we found the same effect in this analysis. As we can observe in Table~\ref{table:rq3_4_statistical_results_median}, the CT score in D1 is higher for population A than the CT score for population B. However, this result is not due to the presence or not of dead code, but to the larger number of blocks in population A. When the number of blocks in population B decreases -maybe because of the elimination of dead code- the value of the CT development also decreases, instead of receiving a positive recognition.
 
 \begin{table}
  \begin{center}
@@ -429,10 +426,12 @@ Regarding the assessment of Dr. Scratch, we found the same effect in this analys
     Case 2 & 0.0 & 6.0 & 0.080498 & -0.289 \\ \hline
     Case 3 & 0.0 & 5.0 & 0.131713 & -0.325 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} without deciles for dead code (RQ3.4).}
+  \caption{Results for the \textit{t-student} test without deciles for dead code (RQ3.4).}
   \label{table:rq3_4_statistical_results}
  \end{center}
 \end{table}
+
+Regarding the assessment of Dr. Scratch, we found the same effect in this analysis. As we can observe in Table~\ref{table:rq3_4_statistical_results_median}, the CT score in D1 is higher for population A than the CT score for population B. However, this result is not due to the presence or not of dead code, but to the larger number of blocks in population A. When the number of blocks in population B decreases -maybe because of the elimination of dead code- the value of the CT development also decreases, instead of receiving a positive recognition.
 
 
 \begin{table}
@@ -459,12 +458,10 @@ Regarding the assessment of Dr. Scratch, we found the same effect in this analys
 
 
 
-\subsubsection{RQ3.5. Test \textit{t-student} without deciles for attribute initialization}
+\subsubsection{RQ3.5. \textit{T-student} test without deciles for attribute initialization}
 \label{subsubsec:RQ3_5_statistical_results}
 
 Lastly, we obtained the same effects on the results of the analysis with attribute initialization. In Table~\ref{table:rq3_5_statistical_results} we can observe that the values of \textit{p-value} and \textit{size effect} are not relevant. Therefore, we cannot confirm that a worse initialization of attributes has an impact in the CT development process. 
-
-In addition, we can observe slightly the trend of the previous analyzes in Table~\ref{table:rq3_5_statistical_results_median}. The value of CT scored with Dr. Scratch is a little greater, from 14.0 to 14.5 points, when the number of blocks increases significantly, from 175.5 to 328.5.
 
 \begin{table}
  \begin{center}
@@ -474,10 +471,12 @@ In addition, we can observe slightly the trend of the previous analyzes in Table
     Case 1 & 3.0 & 6.0 & 0.101538 & -0.499 \\ \hline
     Case 2 & 3.0 & 10.0 & 0.092452 & -0.873 \\ \hline
   \end{tabular}
-  \caption{Results for the test \textit{t-student} without deciles for attribute initialization (RQ3.5).}
+  \caption{Results for the \textit{t-student} test without deciles for attribute initialization (RQ3.5).}
   \label{table:rq3_5_statistical_results}
  \end{center}
 \end{table}
+
+In addition, we can observe slightly the trend of the previous analyzes in Table~\ref{table:rq3_5_statistical_results_median}. The value of CT scored with Dr. Scratch is a little greater, from 14.0 to 14.5 points, when the number of blocks increases significantly, from 175.5 to 328.5.
 
 \begin{table}
  \begin{center}
@@ -556,12 +555,16 @@ In the first place, we asked both teachers to evaluate six Scratch projects in a
 \subsubsection{\textit{Cooking Mama} project}
 \label{subsub:cooking_mama}
 
-In the case of the `Cooking Mama' project, both teachers evaluated it with four out of ten points. Some of the justifications they gave were: `Too many objects', `difficulty understanding the code', `although the program should have more points, I give it a low score because there are numerous generic names and make difficult the legibility of the code'. Therefore, both teachers were able to detect the presence of default sprite naming and they scored the project negatively. On the contrary, Dr. Scratch assesses `Cooking Mama' with 18/21 points of mastery, evaluating only the richness of blocks that the project has, without taking into account the presence of bad smells.
+In the case of the `Cooking Mama' project, both teachers evaluated it with four out of ten points. Some of the justifications they gave were: `Too many objects', `difficulty understanding the code', `although the program should have more points, I give it a low score because there are numerous generic names and make difficult the legibility of the code'. Therefore, both teachers were able to detect the presence of default sprite naming and they scored the project negatively.
+
+On the contrary, Dr. Scratch assesses `Cooking Mama' with 18/21 points of mastery, evaluating only the richness of blocks that the project has, without taking into account the presence of bad smells.
 
 \subsubsection{\textit{Sky Game} project}
 \label{subsub:sky_game}
 
-Regarding the `Sky Game' project, both teachers evaluated it whith higher marks than the previous one. Some of their comments were: `It is a complete and elaborate program, although it has some repeated blocks and the objects should have more specific names', `very elaborate code although it is not very well understood how it works'. Therefore, both of them detected less amount of bad smells and gave to the project a better evaluation than `Cooking Mama'. In this case, we have the same effect on the assessment of Dr. Scratch: high mastery -17/21 points- without taking into account the presence of bad smells in the evaluation.
+Regarding the `Sky Game' project, both teachers evaluated it with higher marks than the previous one. Some of their comments were: `It is a complete and elaborate program, although it has some repeated blocks and the objects should have more specific names', `very elaborate code although it is not very well understood how it works'. Therefore, both of them detected less amount of bad smells and gave to the project a better evaluation than `Cooking Mama'. 
+
+In this case, we have the same effect on the assessment of Dr. Scratch: high mastery -17/21 points- without taking into account the presence of bad smells in the evaluation.
 
 \subsubsection{\textit{Cutting Down} project}
 \label{subsub:cutting_down}
@@ -577,7 +580,9 @@ The evaluation of `Sea Game' was very low, because it is a project with both bad
 \subsubsection{\textit{Environment Game} project}
 \label{subsub:environment_game}
 
-Regarding `Environment Game', both teachers considered it as a basic project giving it a low score. Due to the small amount of bad smells, they justified their assessment based on code failures: `The synchronization between objects is not appropriate', `sending unnecessary messages', 'unnecessary parallelism, it could be done with two conditions within the same loop'. Therefore, in this case in which the presence of bad smells is not very relevant, the evaluations of the teachers -4/10 points- are in-line with the assessment of Dr. Scratch -12/21 points.
+Regarding `Environment Game', both teachers considered it as a basic project giving it a low score. Due to the small amount of bad smells, they justified their assessment based on code failures: `The synchronization between objects is not appropriate', `sending unnecessary messages', 'unnecessary parallelism, it could be done with two conditions within the same loop'.
+
+Therefore, in this case in which the presence of bad smells is not very relevant, the evaluations of the teachers -4/10 points- are in-line with the assessment of Dr. Scratch -12/21 points.
 
 
 \subsubsection{\textit{Maze Game} project}
@@ -585,7 +590,7 @@ Regarding `Environment Game', both teachers considered it as a basic project giv
 
 Finally, we obtained the same effect in this project. As it is a project without a lot of bad smells, both teachers focused their evaluation in the code. For this reason, both teachers agreed with the assessment of Dr. Scratch and gave to the project the worst evaluation. They underlined aspects such as the disorganization or the lack of coherence in the code and scored it with only two out of ten points.
 
-\subsubsection{Projects order}
+\subsubsection{Ordering projects by their development of CT skills}
 \label{subsub:projects_order_phase_1}
 
 In the last question, we obtained different evaluations, as we can observe in Figure~\ref{fig:projects_order_1}. However, teachers coincided in some aspects: They considered `Maze Game' among the worst projects, `Environment Game' in the middle of the ranking and `Cutting Down' and `Sky Game' among the best projects. 
@@ -611,7 +616,9 @@ Therefore, both teachers developed the expected behaviour in the assessment of b
 \subsection{Second phase}
 \label{subsec:second_phase_experiment}
 
-In the second phase of the experiment, we asked both teachers to evaluate the same six Scratch projects again, but with a previous explanation about bad smells and more guided questions. In this way, they evaluated each bad smell separately from 0 to 10 points, as they considered. Finally, we requested them to order the projects again, in order to verify whether the knowledge about bad smells could impact in their evaluations. The results obtained in the assessment of each type of bad smell are described below.
+In the second phase of the experiment, we asked both teachers to evaluate the same six Scratch projects again, but with a previous explanation about bad smells and more guided questions. In this way, they evaluated each bad smell separately from 0 to 10 points in each project, as they considered.
+
+Finally, we requested them to order the projects again, in order to verify whether the knowledge about bad smells could impact in their evaluations. The results obtained in the assessment of each type of bad smell are described below.
 
 
 \subsubsection{Evaluate the presence of repeated code in the project}
@@ -647,9 +654,6 @@ Therefore, we could affirm that the evaluation of the impact which this bad smel
 
 The results obtained in the evaluation of dead code are summarized in Table~\ref{table:assessment_experiment_dead_code}. We can observe the same effect described previously, even more prominent. The results vary much, even being opposed in projects such as `Environment Game' or `Cutting Down'. 
 
-On the other hand, we could consider the possibility of wrong evaluations from teachers, by introducing erroneous values. That fact could explain, for instance, the value of 10 points which \textit{Teacher B} gives to `Cutting Down', taking into account that the project does not have dead blocks. 
-
-
 \begin{table}
     \centering
     \begin{tabular}{|c|c|c|c|}
@@ -666,6 +670,9 @@ On the other hand, we could consider the possibility of wrong evaluations from t
     \caption{Results of the dead code assessment in the second phase of the experiment.}
     \label{table:assessment_experiment_dead_code}
 \end{table}
+
+On the other hand, we could consider the possibility of wrong evaluations from teachers, by introducing erroneous values. That fact could explain, for instance, the value of 10 points which \textit{Teacher B} gives to `Cutting Down', taking into account that the project does not have dead blocks. 
+
 
 \subsubsection{Evaluate the presence of default naming in the project}
 \label{subsubsec:default_naming_experiment}
@@ -720,17 +727,17 @@ On the contrary, we observe possible wrong evaluations in the assessment of the 
 \subsubsection{Would you modify the evaluation of the project, compared to your evaluation in the phase 1 of the experiment?}
 \label{subsubsec:modification_experiment}
 
-In this question, we expected significant changes. However, in the first phase of the experiment, the teachers evaluated the Scratch projects taking into account the presence of bad smells. In this way, they justified their evaluations based on the amount of bad smells, unconsciously.
+In this question, we expected significant changes in the answers. However, in the first phase of the experiment, teachers evaluated all of the Scratch projects taking into account the presence of bad smells. In this way, they justified their evaluations based on the amount of bad smells, unconsciously.
 
 Therefore, when they received the information about bad smells, they did not change their assessments. Only in the `Sky Game' project, \textit{Teacher B} commented: `I would lower the mark a little, I think I gave the project a very high score'. 
 
 
-\subsubsection{Projects order}
+\subsubsection{Ordering projects by their development of CT skills}
 \label{subsubsec:projects_order_2}
 
 In the last question, \textit{Teacher B} maintained the same order than in the previous phase. Therefore, the knowledge about bad smells and its specific evaluation did not impact on his initial assessment.
 
-On the contrary, \textit{Teacher A} decided to change the order, penalizing the `Maze Game' project and improving the `Cooking Mama' and `Sky Game' projects, as we can observe in Figure~\ref{fig:projects_order_2}. After analyzing his answers, the reasons could be very different: an impact on the perception of the projects due to the presence of bad smells, wrong answers as we described previously or difficulty to understand each type of bad smell explained, among others. Therefore, in this case we could not verify whether the knowledge about bad smells has an impact on his initial assessment.
+On the contrary, \textit{Teacher A} decided to change the order, penalizing the `Maze Game' project and improving the `Cooking Mama' and `Sky Game' projects, as we can observe in Figure~\ref{fig:projects_order_2}. After analyzing his answers, the reasons could be very different: an impact on the perception of the projects due to the presence of bad smells, wrong answers as we described previously or difficulty to understand each type of bad smell explained, among others.
 
 \begin{figure}
     \centering
@@ -738,6 +745,9 @@ On the contrary, \textit{Teacher A} decided to change the order, penalizing the 
     \caption{Projects order in the second phase of the assessment experiment.}
     \label{fig:projects_order_2}
 \end{figure}
+
+Therefore, in this case we could not verify whether the knowledge about bad smells has an impact on his initial assessment.
+
 
 \hfill
 
